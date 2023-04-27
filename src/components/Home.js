@@ -27,5 +27,6 @@ const Container = styled.div`
     width: 100vw;
     background-color: rgb(20, 20, 20);
     color: cyan;
+    padding-top: 10vh;
     margin-top: 10vh;
 `;
