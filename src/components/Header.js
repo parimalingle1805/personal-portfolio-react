@@ -35,7 +35,7 @@ export default Header;
 
 const Container = styled.div`
     background-color: rgb(20, 20, 20);
-    min-height: 10vh;
+    min-height: 5vh;
     position: fixed;
     display: flex;
     align-items: center;
@@ -57,14 +57,14 @@ const Menu = styled.div`
     .link {
         color: white;
         text-decoration: none;
-        font-size: 2em;
+        font-size: 1em;
         font-weight: 600;
         text-transform: uppercase;
         padding: 0 10px;
         margin: 0 3vw;
         flex-wrap: nowrap;
 
-        @media(max-width: 1200px){
+        @media(max-width: 1080px){
         display:none;
         }
     }
@@ -84,7 +84,7 @@ const CustomMenu = styled(MenuIcon)`
     color: white;
     cursor: pointer;
 
-    @media(min-width: 1200px){
+    @media(min-width: 1080px){
         color: black;
     }
 `;
@@ -116,7 +116,7 @@ const BurgerNav = styled.div`
         }
     }
 
-    @media(min-width: 1200px){
+    @media(min-width: 1080px){
         display: none;
     }
 `;
@@ -125,7 +125,7 @@ const CustomClose = styled(CloseIcon)`
     cursor: pointer;
     color: white;
 
-    @media(min-width: 1200px){
+    @media(min-width: 1080px){
         color: black;
     }
 `;
