@@ -13,19 +13,19 @@ const Header = () => {
         <Menu>
             <NavLink className='logo' activeClassName='is-active' to='/'>Portfolio</NavLink>
             <NavLink className='link' activeClassName='is-active' to='/'>Home</NavLink>
-            <NavLink className='link' activeClassName='is-active' to='/'>About</NavLink>
-            <NavLink className='link' activeClassName='is-active' to='/'>Projects</NavLink>
-            <NavLink className='link' activeClassName='is-active' to='/'>Contact</NavLink>
+            <NavLink className='link' activeClassName='is-active' to='/about'>About</NavLink>
+            <NavLink className='link' activeClassName='is-active' to='/projects'>Projects</NavLink>
+            <NavLink className='link' activeClassName='is-active' to='/contact'>Contact</NavLink>
         </Menu>
         <CustomMenu onClick={() => setBurgerStatus(true)}/>
         <BurgerNav show={burgerStatus}>
             <CloseWrapper>
                 <CustomClose onClick={() => setBurgerStatus(false)}/>
             </CloseWrapper>
-            <NavLink className='link' activeClassName='is-active' to='/'>Home</NavLink>
-            <NavLink className='link' activeClassName='is-active' to='/'>About</NavLink>
-            <NavLink className='link' activeClassName='is-active' to='/'>Projects</NavLink>
-            <NavLink className='link' activeClassName='is-active' to='/'>Contact</NavLink>
+            <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/'>Home</NavLink>
+            <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/about'>About</NavLink>
+            <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/projects'>Projects</NavLink>
+            <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/contact'>Contact</NavLink>
         </BurgerNav>
     </Container>
   )
@@ -83,7 +83,7 @@ const Menu = styled.div`
 const CustomMenu = styled(MenuIcon)`
     color: white;
     cursor: pointer;
-
+    
     @media(min-width: 1080px){
         color: black;
     }
