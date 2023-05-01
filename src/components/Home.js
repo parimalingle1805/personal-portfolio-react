@@ -2,6 +2,13 @@ import React from 'react';
 import {Fade } from 'react-awesome-reveal';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import {
+  Info,
+  Instagram,
+  LinkedIn,
+  GitHub,
+  ReadMore
+ } from '@mui/icons-material';
 
 const Home = () => {
   return (
@@ -19,7 +26,8 @@ const Home = () => {
       <Fade>
         <Link to='/about'>
           <GridItem2>
-            <InfoIcon />
+            {/* <InfoIcon /> */}
+            <Info style={{"color":"white", "fontSize":"10em","margin":"0.1em auto"}}/>
             <h5 className='link'>More About me</h5>
           </GridItem2>
         </Link>
@@ -49,13 +57,55 @@ const Home = () => {
         </Link>
       </Fade>
       <Fade>
-        Social Profiles
+        <GridItem6>
+          <IconWrap>
+            <Icons>
+              <Link to='https://www.linkedin.com/in/parimalingle/' target='_blank'>
+                <LinkedIn style={{"fontSize":"40px", "color":"rgb(0, 119, 181)"}} />
+              </Link>
+            </Icons>
+            <Icons>
+              <Link to='https://www.instagram.com/parimalingle/' target='_blank'>
+                <Instagram style={{"fontSize":"40px", "color":"rgb(188, 42, 141)"}} />
+              </Link>
+            </Icons>
+            <Icons>
+              <Link to='https://github.com/parimalingle1805' target='_blank'>
+                <GitHub style={{"fontSize":"40px", "color":"rgb(255, 255, 255)"}} />
+              </Link>
+            </Icons>
+            <Icons>
+              <Link to='/contact'>
+                <ReadMore style={{"fontSize":"40px", "color":"rgb(29, 161, 242)"}} />
+              </Link>
+            </Icons>
+          </IconWrap>
+          <h5 className="link">My Socials</h5>
+        </GridItem6>
       </Fade>
       <Fade>
-        Baner (work exp years, projects)
-      </Fade>
-      <Fade>
-        Contact me BLAA BLAAAAA
+        <GridItem7>
+          <IconWrap>
+            <IconsFilled>
+              <BanerText>
+                <h2>02+</h2>
+                <p className='banerText'>YEARS EXPERIENCE</p>
+              </BanerText>
+            </IconsFilled>
+            <IconsEmpty>
+
+            </IconsEmpty>
+            <IconsEmpty>
+
+            </IconsEmpty>
+            <IconsFilled>
+              <BanerText>
+                <h2>04+</h2>
+                <p className='banerText'>PROJECTS</p>
+              </BanerText>
+            </IconsFilled>
+          </IconWrap>
+        </GridItem7>
       </Fade>
     </Container>
   )
@@ -68,7 +118,7 @@ const Container = styled.div`
   grid-template-columns: auto auto auto auto;
   //grid-auto-rows: 1fr;
   justify-content: center;
-  
+
   @media(max-width: 1080px){
     grid-template-columns: 30vw 30vw 30vw;
   }
@@ -92,7 +142,8 @@ const GridItem = styled.div`
 
   .link {
     color: rgb(200, 200, 200);
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: rgb(40, 40, 40);
     font-size: 1.2em;
     font-weight: 500;
     text-transform: uppercase;
@@ -114,7 +165,7 @@ const ProfilePic = styled.img`
   padding: 1em;
   border-radius: 50px 0px 50px 0px;
   @media(max-width: 512px){
-    height: 7em; 
+    height: 7em;
   }
 `;
 
@@ -138,13 +189,7 @@ const GridItem2 = styled(GridItem)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`;
-
-const InfoIcon = styled.img`
-  content: url('/infoIcon.jpg');
-  height: 10.7em;
-  border-radius: 30px;
-  margin: 2em 2em 1em 2em;
+  padding: 1em 0em;
 `;
 
 const GridItem3 = styled(GridItem)`
@@ -190,4 +235,67 @@ const WorkExpIcon = styled.img`
   width: 10em;
   border-radius: 30px;
   margin: 0em 2em 1em 2em;
+`;
+
+const GridItem6 = styled(GridItem)`
+  background-color: rgba(0, 0, 0, 0)
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.2em;
+`;
+
+const IconWrap = styled(GridItem)`
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Icons = styled.div`
+  margin: 1em;
+  padding: 0.5em;
+  background-color: rgb(60, 60, 60);
+  border: 2px solid rgb(60, 60, 60);
+  border-radius: 50%;
+`;
+
+const GridItem7 = styled(GridItem6)`
+  padding: 0.5em;
+  @media(max-width: 828){
+    padding: 1em;
+  }
+`;
+
+const IconsFilled = styled(Icons)`
+  border-radius: 10px;
+  margin: -0.01em;
+`;
+
+const IconsEmpty = styled(Icons)`
+  background-color: rgb(40, 40, 40);
+  border: 0px;
+  margin: -0.01em;
+`;
+
+const BanerText = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5em;
+  @media(max-width: 828px){
+    margin-top: 1em;
+  }
+
+  h2{
+    font-size: 2em;
+    margin: -0.1em;
+  }
+
+  .banerText {
+    font-size: 0.8em;
+    @media(max-width: 900px){
+      font-size: 0.5em;
+    }
+  }
 `;

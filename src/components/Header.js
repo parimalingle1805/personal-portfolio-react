@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <Container>
         <Menu>
-            <NavLink className='logo' activeClassName='is-active' to='/'>Portfolio</NavLink>
+            <NavLink className='logo' activeClassName='is-active' to='/'>My Portfolio</NavLink>
             <NavLink className='link' activeClassName='is-active' to='/'>Home</NavLink>
             <NavLink className='link' activeClassName='is-active' to='/about'>About</NavLink>
             <NavLink className='link' activeClassName='is-active' to='/projects'>Projects</NavLink>
@@ -83,7 +83,7 @@ const Menu = styled.div`
 const CustomMenu = styled(MenuIcon)`
     color: white;
     cursor: pointer;
-    
+
     @media(min-width: 1080px){
         color: black;
     }
