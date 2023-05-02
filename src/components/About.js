@@ -21,6 +21,7 @@ import {
 const About = () => {
   return (
     <AboutContainer1>
+      <Zoom>
       <GridItem>
         <AboutProfilePic />
       </GridItem>
@@ -84,6 +85,7 @@ const About = () => {
           </IconWrap1>
         </GridItem6>
       </EduSocialsWrap>
+      </Zoom>
     </AboutContainer1>
   )
 }
@@ -96,7 +98,7 @@ const AboutContainer1 = styled(Container)`
   padding-right: 1vw;
   width: 98vw;
   @media(max-width: 1080px){
-    grid-template-columns: auto;
+    grid-template-columns: 97vw;
     overflow-y: hidden;
   }
 `;
@@ -156,7 +158,7 @@ const EduSocialsWrap = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   @media(max-width: 1080px){
-    grid-template-columns: auto;
+    grid-template-columns: 97vw;
   }
 `;
 
