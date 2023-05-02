@@ -1,5 +1,5 @@
 import React from 'react';
-import {Fade } from 'react-awesome-reveal';
+import { Zoom } from 'react-awesome-reveal';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {
@@ -13,7 +13,7 @@ import {
 const Home = () => {
   return (
     <Container>
-      <Fade style={{"gridColumn": "1 / 3"}}>
+      <Zoom style={{"gridColumn": "1 / 3"}}>
         <GridItem1>
           <ProfilePic />
           <SideInfo>
@@ -22,8 +22,8 @@ const Home = () => {
             <p>I am a Senior Software Engineer<br /> currently working at Capgemini.</p>
           </SideInfo>
         </GridItem1>
-      </Fade>
-      <Fade>
+      </Zoom>
+      <Zoom>
         <Link to='/about'>
           <GridItem2>
             {/* <InfoIcon /> */}
@@ -31,32 +31,32 @@ const Home = () => {
             <h5 className='link'>More About me</h5>
           </GridItem2>
         </Link>
-      </Fade>
-      <Fade>
+      </Zoom>
+      <Zoom>
         <Link to='/projects'>
           <GridItem3>
             <ProjectIcon />
             <h5 className='link'>Explore My Works</h5>
           </GridItem3>
         </Link>
-      </Fade>
-      <Fade>
+      </Zoom>
+      <Zoom>
         <Link to='/certifications'>
           <GridItem4>
             <CertificationIcon />
             <h5 className='link'>See My Certifications</h5>
           </GridItem4>
         </Link>
-      </Fade>
-      <Fade>
+      </Zoom>
+      <Zoom>
         <Link to='/workExp'>
           <GridItem5>
             <WorkExpIcon />
             <h5 className='link'>My Work Experience</h5>
           </GridItem5>
         </Link>
-      </Fade>
-      <Fade>
+      </Zoom>
+      <Zoom>
         <GridItem6>
           <IconWrap>
             <Icons>
@@ -82,8 +82,8 @@ const Home = () => {
           </IconWrap>
           <h5 className="link">My Socials</h5>
         </GridItem6>
-      </Fade>
-      <Fade>
+      </Zoom>
+      <Zoom>
         <GridItem7>
           <IconWrap>
             <IconsFilled>
@@ -106,7 +106,7 @@ const Home = () => {
             </IconsFilled>
           </IconWrap>
         </GridItem7>
-      </Fade>
+      </Zoom>
     </Container>
   )
 }
@@ -299,3 +299,12 @@ const BanerText = styled.div`
     }
   }
 `;
+
+export {
+  ProfilePic,
+  Container,
+  GridItem,
+  GridItem6,
+  IconWrap,
+  Icons
+};
