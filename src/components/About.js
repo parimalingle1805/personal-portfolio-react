@@ -171,3 +171,7 @@ const IconWrap1 = styled(IconWrap)`
     grid-template-columns: auto auto auto auto;
   }
 `;
+
+export {
+  BriefExp
+};

@@ -35,7 +35,7 @@ export default Header;
 
 const Container = styled.div`
     background-color: rgb(20, 20, 20);
-    min-height: 5vh;
+    min-height: 8vh;
     position: fixed;
     display: flex;
     align-items: center;
