@@ -69,12 +69,12 @@ const Contact = () => {
           </SocialContRight>
         </LeftCont>
       </Zoom>
-      <Zoom>
-        <h1 style={{"fontSize":"7em"}}>LET'S</h1>
-      </Zoom>
-      <Zoom>
-        <h1 style={{"fontSize":"7em"}}>CONNECT!</h1>
-      </Zoom>
+      <CustZoom>
+        <h1 className='connect'>LET'S</h1>
+      </CustZoom>
+      <CustZoom>
+        <h1 className='connect'>CONNECT!</h1>
+      </CustZoom>
     </ProjectContainer>
   )
 }
@@ -172,5 +172,13 @@ const CustomTwitter = styled(CustomIcons)`
   background: rgb(29, 161, 242);
   .link {
     text-decoration-color: rgb(29, 161, 242);
+    }
+`;
+
+const CustZoom = styled(Zoom)`
+    font-size: 3em;
+
+    @media(max-width: 512px) {
+      font-size: 1.8em;
     }
 `;

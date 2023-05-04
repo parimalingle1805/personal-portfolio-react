@@ -12,11 +12,6 @@ const Certifications = () => {
       "issued": "Coursera | Meta"
     },
     {
-      "title": "Google Kickstart Round H, 2021",
-      "info": "Ranked 3547th worldwide in the Kickstart coding Contest",
-      "issued": "Google"
-    },
-    {
       "title": "Front End Libraries",
       "doc": "31st July, 2020",
       "issued": "Free Code Camp"
@@ -50,6 +45,11 @@ const Certifications = () => {
       "title": "Responsive Web Design",
       "doc": "10 May, 2020",
       "issued": "Free Code Camp"
+    },
+    {
+      "title": "Google Kickstart",
+      "info": "Ranked 3547th worldwide in the Kickstart coding Contest",
+      "issued": "Google"
     },
   ]
   return (

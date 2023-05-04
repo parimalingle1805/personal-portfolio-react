@@ -9,8 +9,14 @@ const Projects = () => {
 
   const projArr = [
     {
+      "title": "Personal Portfolio Web App",
+      "duration": "Apr 2023-May 2023",
+      "field": "Front End Web Development",
+      "info": "Built my own portfolio website using ReactJs."
+    },
+    {
       "title": "SKB",
-      "duration": "Feb-Dec 2022",
+      "duration": "Feb 2022-Jan 2023",
       "field": "Mainframe",
       "info": "Triggered UAT/SKA batches and provided production support."
     },
@@ -95,6 +101,8 @@ const ProjectContainer = styled(Container)`
   }
 `;
 const Project = styled(BriefExp)`
+  padding: 2em;
+  max-width: 85%;
   .expTitle {
     font-size: 2em;
 

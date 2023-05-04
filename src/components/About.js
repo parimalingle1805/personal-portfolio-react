@@ -59,6 +59,18 @@ const About = () => {
             <p className='expTitle'>12<sup>th</sup>  Std.</p>
             <p className='expText'>Mittal International School</p>
           </Education>
+          <Education>
+            <h1 className='heading'>Skills</h1>
+            <br />
+            <p className='expTitle'>Python, HTML, CSS, Git</p>
+            <p className='expText'>Proficient</p>
+            <br />
+            <p className='expTitle'>Javascript, Bootstrap, Java, C++</p>
+            <p className='expText'>Competent</p>
+            <br />
+            <p className='expTitle'>ReactJs, DSA, NodeJs, ExpressJs</p>
+            <p className='expText'>Beginner</p>
+          </Education>
         <GridItem6>
           <h1 style={{"fontWeight":"400","paddingTop":"0.6em","paddingLeft":"0.8em","textAlign":"start"}}>MY SOCIALS</h1>
           <IconWrap1>
@@ -156,7 +168,7 @@ const BriefExp = styled(GridItem)`
 
 const EduSocialsWrap = styled.div`
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   @media(max-width: 1080px){
     grid-template-columns: 97vw;
   }
