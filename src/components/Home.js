@@ -44,7 +44,7 @@ const Home = () => {
         <Link to='/certifications'>
           <GridItem4>
             <CertificationIcon />
-            <h5 className='link'>See My Certifications</h5>
+            <h5 className='link'>See My Certificates</h5>
           </GridItem4>
         </Link>
       </Zoom>

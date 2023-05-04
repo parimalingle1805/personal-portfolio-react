@@ -86,7 +86,7 @@ const ProjectContainer = styled(Container)`
     font-size: 3em;
 
     @media(max-width: 512px) {
-      font-size: 2em;
+      font-size: 1.5em;
     }
   }
 
@@ -97,12 +97,33 @@ const ProjectContainer = styled(Container)`
 const Project = styled(BriefExp)`
   .expTitle {
     font-size: 2em;
+
+    @media(max-width: 512px) {
+      font-size: 1.3em;
+    }
   }
+
   .expText {
     font-size: 1.4em;
     font-weight: 400;
+
+    @media(max-width: 512px) {
+      font-size: 1em;
+    }
   }
   li {
     text-align: start;
+    .expText {
+    font-size: 1.4em;
+    font-weight: 400;
+
+    @media(max-width: 512px) {
+      font-size: 1em;
+    }
   }
 `;
+
+export {
+  ProjectContainer,
+  Project
+}
