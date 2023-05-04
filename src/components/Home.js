@@ -137,7 +137,7 @@ const Container = styled.div`
 
 const GridItem = styled.div`
   background-color: rgb(40, 40, 40);
-  margin: 0.7em 0.7em;
+  margin: 0.7em;
   border-radius: 25px;
 
   .link {

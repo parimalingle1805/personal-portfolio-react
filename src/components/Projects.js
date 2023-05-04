@@ -91,7 +91,7 @@ const ProjectContainer = styled(Container)`
   }
 
   @media(max-width: 1080px){
-    grid-template-columns: auto;
+    grid-template-columns: 95vw;
   }
 `;
 const Project = styled(BriefExp)`

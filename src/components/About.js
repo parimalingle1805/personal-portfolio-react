@@ -173,5 +173,6 @@ const IconWrap1 = styled(IconWrap)`
 `;
 
 export {
-  BriefExp
+  BriefExp,
+  IconWrap1
 };

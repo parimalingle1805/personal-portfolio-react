@@ -16,16 +16,20 @@ const Header = () => {
             <NavLink className='link' activeClassName='is-active' to='/'>Home</NavLink>
             <NavLink className='link' activeClassName='is-active' to='/about'>About</NavLink>
             <NavLink className='link' activeClassName='is-active' to='/projects'>Projects</NavLink>
+            <NavLink className='link' activeClassName='is-active' to='/certifications'>Certificates</NavLink>
+            <NavLink className='link' activeClassName='is-active' to='/workExp'>Work Experience</NavLink>
             <NavLink className='link' activeClassName='is-active' to='/contact'>Contact</NavLink>
         </Menu>
-        <CustomMenu onClick={() => setBurgerStatus(true)}/>
+        <CustomMenu onClick={() => setBurgerStatus(true)} style={{"fontSize":"40px"}}/>
         <BurgerNav show={burgerStatus}>
             <CloseWrapper>
-                <CustomClose onClick={() => setBurgerStatus(false)}/>
+                <CustomClose onClick={() => setBurgerStatus(false)} style={{"fontSize":"40px"}}/>
             </CloseWrapper>
             <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/'>Home</NavLink>
             <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/about'>About</NavLink>
             <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/projects'>Projects</NavLink>
+            <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/certifications'>Certificates</NavLink>
+            <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/workExp'>Work Experience</NavLink>
             <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/contact'>Contact</NavLink>
         </BurgerNav>
     </Container>
@@ -65,7 +69,7 @@ const Menu = styled.div`
         margin: 0 3vw;
         flex-wrap: nowrap;
 
-        @media(max-width: 1080px){
+        @media(max-width: 1400px){
         display:none;
         }
     }
@@ -85,7 +89,7 @@ const CustomMenu = styled(MenuIcon)`
     color: white;
     cursor: pointer;
 
-    @media(min-width: 1080px){
+    @media(min-width: 1400px){
         color: black;
     }
 `;
@@ -117,7 +121,7 @@ const BurgerNav = styled.div`
         }
     }
 
-    @media(min-width: 1080px){
+    @media(min-width: 1400px){
         display: none;
     }
 `;
@@ -126,7 +130,7 @@ const CustomClose = styled(CloseIcon)`
     cursor: pointer;
     color: white;
 
-    @media(min-width: 1080px){
+    @media(min-width: 1400px){
         color: black;
     }
 `;
