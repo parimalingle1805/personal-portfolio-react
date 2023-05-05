@@ -2,7 +2,6 @@ import React from 'react';
 import { Zoom } from 'react-awesome-reveal';
 import { Flare, RadioButtonChecked } from '@mui/icons-material';
 import { ProjectContainer, Project } from './Projects';
-import styled from 'styled-components';
 
 const WorkExp = () => {
 
@@ -87,42 +86,3 @@ const WorkExp = () => {
 }
 
 export default WorkExp;
-
-const WorkContainer = styled(ProjectContainer)`
-
-`;
-
-const Work = styled(Project)`
-  margin: 0.5em;
-  max-width: 45vw;
-  @media(max-width: 1080px){
-    max-width: 100vw;
-  }
-
-  expTitle {
-    font-size: 1.5em;
-
-    @media(max-width: 512px) {
-      font-size: 1.3em;
-    }
-  }
-
-  .expText {
-    font-size: 1.2em;
-    font-weight: 300;
-
-    @media(max-width: 512px) {
-      font-size: 1em;
-    }
-  }
-  li {
-    text-align: start;
-    .expText {
-    font-size: 1.2em;
-    font-weight: 300;
-
-    @media(max-width: 512px) {
-      font-size: 1em;
-    }
-  }
-`;

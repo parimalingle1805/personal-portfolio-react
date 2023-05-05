@@ -14,6 +14,7 @@ function App() {
       <Header />
         <Routes basename="personal-portfolio-react">
               <Route exact path='/' element={<Home />} />
+              <Route exact path='/personal-portfolio-react' element={<Home />} />
               <Route exact path='/about' element={<About />} />
               <Route exact path='/projects' element={<Projects />} />
               <Route exact path='/contact' element={<Contact />} />

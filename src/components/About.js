@@ -116,6 +116,7 @@ const AboutContainer1 = styled(Container)`
 `;
 
 const AboutProfilePic = styled(ProfilePic)`
+  content: url('personal-portfolio-react/home_profile.jpeg');
   height: 18em;
 `;
 

@@ -159,7 +159,7 @@ const GridItem1 = styled(GridItem)`
 `;
 
 const ProfilePic = styled.img`
-  content: url('/home_profile.jpeg');
+  content: url('/personal-portfolio-react/home_profile.jpeg');
   height: 13em;
   margin: 1em;
   padding: 1em;
@@ -200,7 +200,7 @@ const GridItem3 = styled(GridItem)`
 `;
 
 const ProjectIcon = styled.img`
-  content: url('/projectIcon.png');
+  content: url('personal-portfolio-react/projectIcon.png');
   height: 10.7em;
   border-radius: 30px;
   margin: 0em 2em 1em 2em;
@@ -214,7 +214,7 @@ const GridItem4 = styled(GridItem)`
 `;
 
 const CertificationIcon = styled.img`
-  content: url('/certificationIcon.png');
+  content: url('personal-portfolio-react/certificationIcon.png');
   height: 10em;
   width: 10em;
   border-radius: 30px;
@@ -230,7 +230,7 @@ const GridItem5 = styled(GridItem)`
 `;
 
 const WorkExpIcon = styled.img`
-  content: url('/workExpIcon.png');
+  content: url('personal-portfolio-react/workExpIcon.png');
   height: 10em;
   width: 10em;
   border-radius: 30px;
