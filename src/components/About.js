@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Zoom } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 import {
-  ProfilePic,
   Container,
   GridItem,
   GridItem6,
