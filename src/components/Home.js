@@ -200,7 +200,7 @@ const GridItem3 = styled(GridItem)`
 `;
 
 const ProjectIcon = styled.img`
-  content: url('personal-portfolio-react/projectIcon.jpeg');
+  content: url('personal-portfolio-react/home_profile.jpeg');
   height: 10.7em;
   border-radius: 30px;
   margin: 0em 2em 1em 2em;
