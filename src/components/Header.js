@@ -10,8 +10,8 @@ const Header = () => {
   return (
     <Container>
         <Menu>
-            <NavLink className='logo' activeClassName='is-active' to='/'>My Portfolio</NavLink>
-            <NavLink className='link' activeClassName='is-active' to='/'>Home</NavLink>
+            <NavLink className='logo' activeClassName='is-active' to='/personal-portfolio-react'>My Portfolio</NavLink>
+            <NavLink className='link' activeClassName='is-active' to='/personal-portfolio-react'>Home</NavLink>
             <NavLink className='link' activeClassName='is-active' to='/about'>About</NavLink>
             <NavLink className='link' activeClassName='is-active' to='/projects'>Projects</NavLink>
             <NavLink className='link' activeClassName='is-active' to='/certifications'>Certificates</NavLink>
@@ -23,7 +23,7 @@ const Header = () => {
             <CloseWrapper>
                 <CustomClose onClick={() => setBurgerStatus(false)} style={{"fontSize":"40px"}}/>
             </CloseWrapper>
-            <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/'>Home</NavLink>
+            <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/personal-portfolio-react'>Home</NavLink>
             <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/about'>About</NavLink>
             <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/projects'>Projects</NavLink>
             <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/certifications'>Certificates</NavLink>

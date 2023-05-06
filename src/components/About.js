@@ -115,9 +115,20 @@ const AboutContainer1 = styled(Container)`
   }
 `;
 
-const AboutProfilePic = styled(ProfilePic)`
-  content: url('personal-portfolio-react/home_profile.jpeg');
+// const AboutProfilePic = styled(ProfilePic)`
+//   content: url('personal-portfolio-react/home_profile.jpeg');
+//   height: 18em;
+// `;
+
+const AboutProfilePic = styled.img`
+  content: url('/personal-portfolio-react/home_profile.jpeg');
   height: 18em;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 50px 0px 50px 0px;
+  @media(max-width: 512px){
+    height: 7em;
+  }
 `;
 
 const Summary = styled(GridItem)`
