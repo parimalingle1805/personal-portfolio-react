@@ -29,13 +29,13 @@ const Contact = () => {
             <SocialIcons>
               <Phone style={{"fontSize": "40px"}}/>
             </SocialIcons>
-            <p>+91 8780052335</p>
+            <p>+1 (562) 846-0322</p>
           </SocialCont>
           <SocialCont>
             <SocialIcons>
               <LocationOn style={{"fontSize": "40px"}}/>
             </SocialIcons>
-            <p>Hinjewadi, Pune</p>
+            <p>Long Beach, California</p>
           </SocialCont>
         </LeftCont>
       </Zoom>
