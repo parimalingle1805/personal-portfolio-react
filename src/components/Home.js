@@ -159,7 +159,7 @@ const GridItem1 = styled(GridItem)`
 `;
 
 const ProfilePic = styled.img`
-  content: url('/personal-portfolio-react/home_profile.jpeg');
+  content: url('/personal-portfolio-react/home_profile2.jpg');
   height: 13em;
   margin: 1em;
   padding: 1em;

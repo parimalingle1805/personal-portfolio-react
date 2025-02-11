@@ -120,7 +120,7 @@ const AboutContainer1 = styled(Container)`
 // `;
 
 const AboutProfilePic = styled.img`
-  content: url('/personal-portfolio-react/home_profile.jpeg');
+  content: url('/personal-portfolio-react/home_profile2.jpg');
   height: 18em;
   margin: 1em;
   padding: 1em;
