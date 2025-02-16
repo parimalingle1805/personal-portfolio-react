@@ -188,7 +188,7 @@ const GridItem1 = styled(GridItem)`
 `;
 
 const ProfilePic = styled.img`
-  content: url('/personal-portfolio-react/home_profile2.jpg');
+  content: url('/personal-portfolio-react/home_profile.jpeg');
   justify-self: center;
   align-self: center;
   height: 15em;
