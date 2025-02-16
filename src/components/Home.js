@@ -3,110 +3,118 @@ import { Zoom } from 'react-awesome-reveal';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {
-  Info,
   Instagram,
   LinkedIn,
   GitHub,
-  ReadMore
+  ReadMore,
  } from '@mui/icons-material';
-
+let socialIcons = [
+  {
+    icon: <LinkedIn style={{"fontSize":"40px", "color":"rgb(0, 119, 181)"}} />,
+    link: 'https://www.linkedin.com/in/parimalingle/',
+    name: 'LinkedIn',
+    ariaLabel: 'LinkedIn Profile URL'
+  },
+  {
+    icon: <Instagram style={{"fontSize":"40px", "color":"rgb(188, 42, 141)"}} />,
+    link: 'https://www.instagram.com/parimalingle/',
+    name: 'Instagram',
+    ariaLabel: 'Instagram Profile URL'
+  },
+  {
+    icon: <GitHub style={{"fontSize":"40px", "color":"rgb(255, 255, 255)"}} />,
+    link: 'https://github.com/parimalingle1805',
+    name: 'GitHub',
+    ariaLabel: 'Github Profile URL'
+  },
+  {
+    icon: <ReadMore style={{"fontSize":"40px", "color":"rgb(29, 161, 242)"}} />,
+    link: '/contact',
+    name: 'Contact',
+    ariaLabel: 'Contact Page URL'
+  }
+];
 const Home = () => {
+  window.scrollTo(0, 0);
+  let iconUrls = [
+    {
+      icon: '/personal-portfolio-react/workExpIcon.png',
+      link: '/workExp',
+      name: 'My Work Experience',
+      ariaLabel: 'Work Experience Page URL'
+    },
+    {
+      icon: '/personal-portfolio-react/projectIcon.png',
+      link: '/projects',
+      name: 'Explore My Projects',
+      ariaLabel: 'Projects Page URL'
+    },
+    {
+      icon: '/personal-portfolio-react/certificationIcon.png',
+      link: '/certifications',
+      name: 'See My Certificates',
+      ariaLabel: 'Certifications Page URL'
+    },
+    {
+      icon: '/personal-portfolio-react/infoIcon.png',
+      link: '/about',
+      name: 'Professional Summary',
+      ariaLabel: 'About Page URL'
+    }
+  ];
+  let resumeButtonStyle = {
+    gridColumn: "1 / 3",
+    borderRadius:"20px",
+    padding: "0.5em"
+  };
   return (
     <Container>
-      <Zoom style={{"gridColumn": "1 / 3"}}>
         <GridItem1>
-          <ProfilePic />
+          <ProfilePic alt='Profile Picture'/>
           <SideInfo>
-            <p>MSIS STUDENT</p>
             <h1>Parimal Ingle</h1>
-            <p>Currently pursuing Masters in Information Systems<br /> at California State University, Long Beach.</p>
+            <h3> Full-Stack Developer | Bridging Technology and Design for Exceptional User Experiences</h3>
+            <p>Driven MSIS student passionate about building scalable web applications and creating intuitive user experiences.</p>
           </SideInfo>
         </GridItem1>
-      </Zoom>
-      <Zoom>
-        <Link to='/about'>
-          <GridItem2>
-            {/* <InfoIcon /> */}
-            <Info style={{"color":"white", "fontSize":"10em","margin":"0.1em auto"}}/>
-            <h5 className='link'>More About me</h5>
+        {iconUrls && iconUrls.map((iconUrl, index) => (
+          <GridItem2 key={index}>
+            <Zoom>
+              <Link aria-label={iconUrl.ariaLabel} to={iconUrl.link}>
+                  <Icon style={{content: `url(${iconUrl.icon})`}}/>
+                  <h5 className='link'>{iconUrl.name}</h5>
+              </Link>
+            </Zoom>
           </GridItem2>
-        </Link>
-      </Zoom>
-      <Zoom>
-        <Link to='/projects'>
-          <GridItem3>
-            <ProjectIcon />
-            <h5 className='link'>Explore My Works</h5>
-          </GridItem3>
-        </Link>
-      </Zoom>
-      <Zoom>
-        <Link to='/certifications'>
-          <GridItem4>
-            <CertificationIcon />
-            <h5 className='link'>See My Certificates</h5>
-          </GridItem4>
-        </Link>
-      </Zoom>
-      <Zoom>
-        <Link to='/workExp'>
-          <GridItem5>
-            <WorkExpIcon />
-            <h5 className='link'>My Work Experience</h5>
-          </GridItem5>
-        </Link>
-      </Zoom>
-      <Zoom>
-        <GridItem6>
-          <IconWrap>
-            <Icons>
-              <Link to='https://www.linkedin.com/in/parimalingle/' target='_blank'>
-                <LinkedIn style={{"fontSize":"40px", "color":"rgb(0, 119, 181)"}} />
-              </Link>
-            </Icons>
-            <Icons>
-              <Link to='https://www.instagram.com/parimalingle/' target='_blank'>
-                <Instagram style={{"fontSize":"40px", "color":"rgb(188, 42, 141)"}} />
-              </Link>
-            </Icons>
-            <Icons>
-              <Link to='https://github.com/parimalingle1805' target='_blank'>
-                <GitHub style={{"fontSize":"40px", "color":"rgb(255, 255, 255)"}} />
-              </Link>
-            </Icons>
-            <Icons>
-              <Link to='/contact'>
-                <ReadMore style={{"fontSize":"40px", "color":"rgb(29, 161, 242)"}} />
-              </Link>
-            </Icons>
-          </IconWrap>
-          <h5 className="link">My Socials</h5>
-        </GridItem6>
-      </Zoom>
-      <Zoom>
-        <GridItem7>
-          <IconWrap>
-            <IconsFilled>
-              <BanerText>
-                <h2>02+</h2>
-                <p className='banerText'>YEARS EXPERIENCE</p>
-              </BanerText>
-            </IconsFilled>
-            <IconsEmpty>
-
-            </IconsEmpty>
-            <IconsEmpty>
-
-            </IconsEmpty>
-            <IconsFilled>
-              <BanerText>
-                <h2>04+</h2>
-                <p className='banerText'>PROJECTS</p>
-              </BanerText>
-            </IconsFilled>
-          </IconWrap>
-        </GridItem7>
-      </Zoom>
+        ))}
+        <GridItem2>
+          <Zoom>
+            <IconWrap>  
+              {socialIcons && socialIcons.map((socialIcon, index) => (
+                <Link key={index} aria-label={socialIcon.ariaLabel} to={socialIcon.link}>
+                  <Icons>
+                    {socialIcon.icon}
+                  </Icons>
+                </Link>
+              ))}  
+            </IconWrap>
+            <h5 className="link">My Socials</h5>  
+          </Zoom>
+        </GridItem2>
+        <GridItem2>
+          <Zoom>
+              <IconWrap style={{justifyContent: "space-between"}}>
+                  <Icons style={resumeButtonStyle} onClick={() => window.open('/personal-portfolio-react/resume.pdf', '_blank')}>
+                    View My Resume
+                  </Icons>
+                  <Icons style={resumeButtonStyle}> 
+                    <a style={{color:"white", textDecoration:"none"}} href = '/personal-portfolio-react/resume.pdf' target='_blank' download="Parimal_Ingle_Resume_2024">
+                      Download Resume
+                    </a>
+                  </Icons>
+              </IconWrap>
+          </Zoom>
+        </GridItem2>
     </Container>
   )
 }
@@ -115,8 +123,7 @@ export default Home;
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  //grid-auto-rows: 1fr;
+  grid-template-columns: 23vw 23vw 23vw 23vw;
   justify-content: center;
 
   @media(max-width: 1080px){
@@ -124,7 +131,7 @@ const Container = styled.div`
   }
 
   @media(max-width: 828px){
-    grid-template-columns: 50vw 50vw;
+    grid-template-columns: 45vw 45vw;
     overflow-y: hidden;
   }
 
@@ -132,14 +139,17 @@ const Container = styled.div`
   background-color: rgb(20, 20, 20);
   color: white;
   padding-top: 10vh;
-  margin-top: 5vh;
+  margin-top: 3vh;
 `;
 
 const GridItem = styled.div`
   background-color: rgb(40, 40, 40);
   margin: 0.7em;
+  align-content: space-between;
   border-radius: 25px;
-
+  @media(min-width: 1440px){
+    font-size: 1.2em;
+  }
   .link {
     color: rgb(200, 200, 200);
     text-decoration: underline;
@@ -147,103 +157,74 @@ const GridItem = styled.div`
     font-size: 1.2em;
     font-weight: 500;
     text-transform: uppercase;
-    padding: 0 10px;
-    margin: 0em 0em 1em 0em;
-    flex-wrap: nowrap;
+    margin: 0.5em;
   }
 `;
 
 const GridItem1 = styled(GridItem)`
-  display: flex;
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: auto auto;
   justify-content: space-between;
+  @media(max-width: 1080px){
+    grid-row: 1 / 3;
+  }
+    
+  @media(max-width: 512px){
+    grid-template-columns: auto;
+    padding: 1em;
+    justify-content: center;
+  }
+  @keyframes slide-in {
+      from {
+        scale: 0%;
+      }
+
+      to {
+        scale:100%;
+      }
+    }
+  animation: slide-in 0.7s ease-in;
 `;
 
 const ProfilePic = styled.img`
   content: url('/personal-portfolio-react/home_profile2.jpg');
-  height: 13em;
+  justify-self: center;
+  align-self: center;
+  height: 15em;
   margin: 1em;
   padding: 1em;
   border-radius: 50px 0px 50px 0px;
-  @media(max-width: 512px){
-    height: 7em;
-  }
 `;
 
 const SideInfo = styled.div`
   display: flex;
   flex-direction: column;
-  //justify-content: space-between;
-  //align-items: start;
   font-weight: 600;
-  margin: 1em 7em 1em 0em;
-  padding-top: 1em;
+  font-size: 1.2em;
+  margin: 1em 2em 1em 0em;
   @media(max-width: 512px){
     font-weight: 300;
-    font-size: 0.7em;
-    padding-top: 1.7em;
-    margin: 0em 2em 0em 0em;
+    font-size: 1em;
+    padding-top: 1em;
+    margin: 0em 1em 0em 0em;
   }
 `;
 
 const GridItem2 = styled(GridItem)`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1em 0em;
 `;
 
-const GridItem3 = styled(GridItem)`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 2em;
-`;
-
-const ProjectIcon = styled.img`
-  content: url('/personal-portfolio-react/projectIcon.png');
-  height: 10.7em;
-  border-radius: 30px;
-  margin: 0em 2em 1em 2em;
-`;
-
-const GridItem4 = styled(GridItem)`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const CertificationIcon = styled.img`
-  content: url('/personal-portfolio-react/certificationIcon.png');
-  height: 10em;
-  width: 10em;
-  border-radius: 30px;
+const Icon = styled.img`
+  
+  height: 8em;
   margin: 2em 2em 1em 2em;
-`;
-
-const GridItem5 = styled(GridItem)`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 2em;
-  align-items: center;
-`;
-
-const WorkExpIcon = styled.img`
-  content: url('/personal-portfolio-react/workExpIcon.png');
-  height: 10em;
-  width: 10em;
-  border-radius: 30px;
-  margin: 0em 2em 1em 2em;
-`;
-
-const GridItem6 = styled(GridItem)`
-  background-color: rgba(0, 0, 0, 0)
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 0.2em;
+  @media(max-width: 512px){
+    height: 5em;
+  }
 `;
 
 const IconWrap = styled(GridItem)`
@@ -254,49 +235,14 @@ const IconWrap = styled(GridItem)`
 `;
 
 const Icons = styled.div`
-  margin: 1em;
+  margin: 0.5em;
   padding: 0.5em;
   background-color: rgb(60, 60, 60);
   border: 2px solid rgb(60, 60, 60);
-  border-radius: 50%;
-`;
-
-const GridItem7 = styled(GridItem6)`
-  padding: 0.5em;
-  @media(max-width: 828){
-    padding: 1em;
-  }
-`;
-
-const IconsFilled = styled(Icons)`
-  border-radius: 10px;
-  margin: -0.01em;
-`;
-
-const IconsEmpty = styled(Icons)`
-  background-color: rgb(40, 40, 40);
-  border: 0px;
-  margin: -0.01em;
-`;
-
-const BanerText = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 0.5em;
-  @media(max-width: 828px){
-    margin-top: 1em;
-  }
-
-  h2{
-    font-size: 2em;
-    margin: -0.1em;
-  }
-
-  .banerText {
-    font-size: 0.8em;
-    @media(max-width: 900px){
-      font-size: 0.5em;
-    }
+  border-radius: 20px;
+  font-size: 1.5em;
+  @media(max-width: 512px){
+    font-size: 1em;
   }
 `;
 
@@ -304,7 +250,8 @@ export {
   ProfilePic,
   Container,
   GridItem,
-  GridItem6,
+  GridItem2,
   IconWrap,
-  Icons
+  Icons,
+  socialIcons
 };

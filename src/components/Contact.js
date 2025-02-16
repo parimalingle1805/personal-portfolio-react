@@ -13,12 +13,15 @@ import {
   Twitter
 } from '@mui/icons-material';
 import styled from 'styled-components';
+import { GridItem2 } from './Home';
 
 const Contact = () => {
+  window.scrollTo(0, 0);
   return (
-    <ProjectContainer>
-      <Zoom>
-        <LeftCont>
+    <ContactContainer>
+      
+        <GridItem2>
+        <Zoom>
           <SocialCont>
             <SocialIcons>
               <MailOutlineTwoTone style={{"fontSize": "40px"}}/>
@@ -37,10 +40,12 @@ const Contact = () => {
             </SocialIcons>
             <p>Long Beach, California</p>
           </SocialCont>
-        </LeftCont>
-      </Zoom>
-      <Zoom>
-        <LeftCont>
+          </Zoom>
+        </GridItem2>
+      
+      
+        <GridItem2>
+        <Zoom>
           <SocialContRight>
           <Link to='https://www.linkedin.com/in/parimalingle/' target='_blank'>
               <CustomLinkedin>
@@ -67,30 +72,28 @@ const Contact = () => {
               </CustomTwitter>
             </Link>
           </SocialContRight>
-        </LeftCont>
-      </Zoom>
+          </Zoom>
+        </GridItem2>
+      
       <CustZoom>
         <h1 className='connect'>LET'S</h1>
       </CustZoom>
       <CustZoom>
         <h1 className='connect'>CONNECT!</h1>
       </CustZoom>
-    </ProjectContainer>
+    </ContactContainer>
   )
 }
 
 export default Contact;
 
-
-const LeftCont = styled.div`
-  background-color: rgb(40, 40, 40);
-  border-radius: 25px;
-  margin: 0.6em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1em;
+const ContactContainer = styled(ProjectContainer)`
+  grid-template-columns: 40vw 40vw;
+  @media(max-width: 1900px) {
+    grid-template-columns: 80vw;
+  }
 `;
+
 const SocialCont = styled.div`
   display: flex;
   justify-content: start;
@@ -125,7 +128,7 @@ const SocialContRight = styled.div`
     font-weight: 400;
     font-size: 1.3em;
   }
-  @media(max-width: 828px) {
+  @media(max-width: 1440px) {
     p {
       font-size: 1.1em;
     }

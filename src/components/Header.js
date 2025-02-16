@@ -12,7 +12,7 @@ const Header = () => {
         <Menu>
             <NavLink className='logo' activeClassName='is-active' to='/personal-portfolio-react'>My Portfolio</NavLink>
             <NavLink className='link' activeClassName='is-active' to='/personal-portfolio-react'>Home</NavLink>
-            <NavLink className='link' activeClassName='is-active' to='/about'>About</NavLink>
+            <NavLink className='link' activeClassName='is-active' to='/about'>Summary</NavLink>
             <NavLink className='link' activeClassName='is-active' to='/projects'>Projects</NavLink>
             <NavLink className='link' activeClassName='is-active' to='/certifications'>Certificates</NavLink>
             <NavLink className='link' activeClassName='is-active' to='/workExp'>Work Experience</NavLink>
@@ -24,7 +24,7 @@ const Header = () => {
                 <CustomClose onClick={() => setBurgerStatus(false)} style={{"fontSize":"40px"}}/>
             </CloseWrapper>
             <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/personal-portfolio-react'>Home</NavLink>
-            <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/about'>About</NavLink>
+            <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/about'>Summary</NavLink>
             <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/projects'>Projects</NavLink>
             <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/certifications'>Certificates</NavLink>
             <NavLink onClick={() => setBurgerStatus(false)} className='link' activeClassName='is-active' to='/workExp'>Work Experience</NavLink>
@@ -60,14 +60,14 @@ const Menu = styled.div`
     .link {
         color: white;
         text-decoration: none;
-        font-size: 1em;
-        font-weight: 600;
+        font-size: 1.3em;
+        font-weight: 500;
         text-transform: uppercase;
         padding: 0 10px;
         margin: 0 3vw;
         flex-wrap: nowrap;
 
-        @media(max-width: 1400px){
+        @media(max-width: 1550px){
         display:none;
         }
     }
@@ -87,8 +87,9 @@ const CustomMenu = styled(MenuIcon)`
     color: white;
     cursor: pointer;
 
-    @media(min-width: 1400px){
-        color: black;
+    @media(min-width: 1550px){
+        pointer-events: none;
+        color: rgb(20, 20, 20);
     }
 `;
 
@@ -99,7 +100,7 @@ const BurgerNav = styled.div`
     right: 0;
     color: white;
     background: rgb(20, 20, 20);
-    width: 50%;
+    width: 20%;
     z-index: 16;
     list-style: none;
     padding: 20px;
@@ -119,8 +120,14 @@ const BurgerNav = styled.div`
         }
     }
 
-    @media(min-width: 1400px){
+    @media(min-width: 1550px){
         display: none;
+    }
+    @media(max-width: 1080px){
+        width: 30%;
+    }
+    @media(max-width: 720px){
+        width: 40%;
     }
 `;
 
@@ -128,7 +135,7 @@ const CustomClose = styled(CloseIcon)`
     cursor: pointer;
     color: white;
 
-    @media(min-width: 1400px){
+    @media(min-width: 1550px){
         color: black;
     }
 `;
