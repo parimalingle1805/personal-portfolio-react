@@ -7,11 +7,11 @@ import {
   MailOutlineTwoTone,
   Phone,
   LocationOn,
-  Instagram,
   LinkedIn,
   GitHub,
-  Twitter
 } from '@mui/icons-material';
+import XIcon from '@mui/icons-material/X';
+import RedditIcon from '@mui/icons-material/Reddit';
 import styled from 'styled-components';
 import { GridItem2 } from './Home';
 
@@ -46,41 +46,42 @@ const Contact = () => {
       
         <GridItem2>
         <Zoom>
+          <h1 style={{fontWeight:"400"}}>MY SOCIALS</h1>
           <SocialContRight>
-          <Link to='https://www.linkedin.com/in/parimalingle/' target='_blank'>
-              <CustomLinkedin>
-                  <LinkedIn style={{"fontSize":"75px", "color":"white","marginRight":"0.4em"}} />
-                <p className='link'>LinkedIn</p>
-              </CustomLinkedin>
-          </Link>
-          <Link to='https://www.instagram.com/parimalingle/' target='_blank'>
-              <CustomInsta>
-                  <Instagram style={{"fontSize":"75px", "color":"white","marginRight":"0.4em"}} />
-                <p className='link'>Instagram</p>
-              </CustomInsta>
-            </Link>
             <Link to='https://github.com/parimalingle1805' target='_blank'>
               <CustomGithub>
                   <GitHub style={{"fontSize":"75px", "color":"white","marginRight":"0.4em"}} />
                 <p className='link'>Github</p>
               </CustomGithub>
             </Link>
-            <Link to='https://twitter.com/IngleParimal' target='_blank'>
-              <CustomTwitter>
-                  <Twitter style={{"fontSize":"75px", "color":"white","marginRight":"0.4em"}} />
-                <p className='link'>Twitter</p>
-              </CustomTwitter>
+            <Link to='https://www.linkedin.com/in/parimalingle/' target='_blank'>
+                <CustomLinkedin>
+                    <LinkedIn style={{"fontSize":"75px", "color":"white","marginRight":"0.4em"}} />
+                  <p className='link'>LinkedIn</p>
+                </CustomLinkedin>
+            </Link>
+            <Link to='https://www.reddit.com/user/parimalingle1805/' target='_blank'>
+              <CustomReddit>
+                  <RedditIcon style={{"fontSize":"75px", "color":"white","marginRight":"0.4em"}} />
+                <p className='link'>Reddit</p>
+              </CustomReddit>
+            </Link>
+            <Link to='https://x.com/IngleParimal' target='_blank'>
+              <CustomX>
+                  <XIcon style={{"fontSize":"75px", "color":"white","marginRight":"0.4em"}} />
+                <p className='link'>X</p>
+              </CustomX>
             </Link>
           </SocialContRight>
           </Zoom>
         </GridItem2>
       
-      <CustZoom>
+      {/* <CustZoom>
         <h1 className='connect'>LET'S</h1>
       </CustZoom>
       <CustZoom>
         <h1 className='connect'>CONNECT!</h1>
-      </CustZoom>
+      </CustZoom> */}
     </ContactContainer>
   )
 }
@@ -88,9 +89,9 @@ const Contact = () => {
 export default Contact;
 
 const ContactContainer = styled(ProjectContainer)`
-  grid-template-columns: 40vw 40vw;
-  @media(max-width: 1900px) {
-    grid-template-columns: 80vw;
+  grid-template-columns: 50vw 50vw;
+  @media(max-width: 1080px) {
+    grid-template-columns: 100vw;
   }
 `;
 
@@ -109,6 +110,11 @@ const SocialCont = styled.div`
       font-size: 1.1em;
     }
   }
+  @media(max-width: 350px) {
+    p {
+      font-size: 0.9em;
+    }
+  }
 `;
 const SocialIcons = styled(Icons)`
   border-radius: 30%;
@@ -117,9 +123,9 @@ const SocialIcons = styled(Icons)`
 
 const SocialContRight = styled.div`
   display: grid;
-  grid-template-columns: auto auto;
-  column-gap: 2em;
-  row-gap: 2em;
+  grid-template-columns: 48% 48%;
+  column-gap: 1.5em;
+  row-gap: 1.5em;
   //justify-content: start;
   padding: 2em;
 
@@ -135,6 +141,14 @@ const SocialContRight = styled.div`
     padding: 0.8em;
     grid-template-columns: auto;
   }
+  @media(max-width: 512px) {
+    p {
+      font-size: 1.1em;
+    }
+    padding: 0.8em;
+    grid-template-columns: 100%;
+  }
+  
 
 `;
 
@@ -159,10 +173,10 @@ const CustomLinkedin = styled(CustomIcons)`
   }
 `;
 
-const CustomInsta = styled(CustomIcons)`
-  background: rgb(188, 42, 141);
+const CustomReddit = styled(CustomIcons)`
+  background: rgb(255, 86, 0);
   .link {
-    text-decoration-color: rgb(188, 42, 141);
+    text-decoration-color: rgb(255, 86, 0);
     }
 `;
 const CustomGithub = styled(CustomIcons)`
@@ -171,17 +185,17 @@ const CustomGithub = styled(CustomIcons)`
     text-decoration-color: rgb(0, 0, 0);
     }
 `;
-const CustomTwitter = styled(CustomIcons)`
-  background: rgb(29, 161, 242);
+const CustomX = styled(CustomIcons)`
+  background: rgb(0, 0, 0);
   .link {
-    text-decoration-color: rgb(29, 161, 242);
+    text-decoration-color: rgb(0, 0, 0);
     }
 `;
 
-const CustZoom = styled(Zoom)`
-    font-size: 3em;
+// const CustZoom = styled(Zoom)`
+//     font-size: 3em;
 
-    @media(max-width: 512px) {
-      font-size: 1.8em;
-    }
-`;
+//     @media(max-width: 512px) {
+//       font-size: 1.8em;
+//     }
+// `;

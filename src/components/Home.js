@@ -3,11 +3,13 @@ import { Zoom } from 'react-awesome-reveal';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {
-  Instagram,
   LinkedIn,
   GitHub,
   ReadMore,
  } from '@mui/icons-material';
+ import XIcon from '@mui/icons-material/X';
+ import RedditIcon from '@mui/icons-material/Reddit';
+
 let socialIcons = [
   {
     icon: <LinkedIn style={{"fontSize":"40px", "color":"rgb(0, 119, 181)"}} />,
@@ -16,10 +18,10 @@ let socialIcons = [
     ariaLabel: 'LinkedIn Profile URL'
   },
   {
-    icon: <Instagram style={{"fontSize":"40px", "color":"rgb(188, 42, 141)"}} />,
-    link: 'https://www.instagram.com/parimalingle/',
-    name: 'Instagram',
-    ariaLabel: 'Instagram Profile URL'
+    icon: <RedditIcon style={{"fontSize":"40px", "color":"rgb(255, 86, 0)"}} />,
+    link: 'https://www.reddit.com/user/parimalingle1805/',
+    name: 'Reddit',
+    ariaLabel: 'Reddit Profile URL'
   },
   {
     icon: <GitHub style={{"fontSize":"40px", "color":"rgb(255, 255, 255)"}} />,
@@ -28,10 +30,10 @@ let socialIcons = [
     ariaLabel: 'Github Profile URL'
   },
   {
-    icon: <ReadMore style={{"fontSize":"40px", "color":"rgb(29, 161, 242)"}} />,
-    link: '/contact',
-    name: 'Contact',
-    ariaLabel: 'Contact Page URL'
+    icon: <XIcon style={{"fontSize":"40px", "color":"rgb(255, 255, 255)"}} />,
+    link: 'https://x.com/IngleParimal',
+    name: 'X/Twitter',
+    ariaLabel: 'X Profile URL'
   }
 ];
 const Home = () => {
@@ -91,7 +93,7 @@ const Home = () => {
           <Zoom>
             <IconWrap>  
               {socialIcons && socialIcons.map((socialIcon, index) => (
-                <Link key={index} aria-label={socialIcon.ariaLabel} to={socialIcon.link}>
+                <Link key={index} aria-label={socialIcon.ariaLabel} to={socialIcon.link} target='_blank'>
                   <Icons>
                     {socialIcon.icon}
                   </Icons>
