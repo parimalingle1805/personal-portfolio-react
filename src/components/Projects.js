@@ -36,8 +36,9 @@ const Projects = () => {
       "contrib": "Full Stack Developer and data analyst, responsible for leading data collection, designing front end with other members, and delivering project.",
       "tech": "Python, Django, HTML, CSS, Bootstrap, SQLite, RESTful API",
       "keyAchiev": [
-        "Designed and developed a RESTful API to efficiently deliver data insights and maintain scalability, all while enhancing UI functions.",
-        "Improved time efficiency by 15-20% by creating low/hi-fi mockups using Figma that was approved by all stakeholders."
+        "Developed a full-stack Python-Django web application enabling patients to securely manage their healthcare needs, including symptom input, appointment scheduling, and prescription information.",
+        "Implemented a RESTful API to integrate the front-end with the database, optimizing data retrieval process by 10%.",
+        "Implemented algorithms to analyze patient symptoms and provide recommendations, contributing to a more efficient and data-driven approach to healthcare and resulted in estimated time efficiency increase by 15-20%."
       ],
       "gitLink": "https://github.com/parimalingle1805/patient-portal.git"
     },

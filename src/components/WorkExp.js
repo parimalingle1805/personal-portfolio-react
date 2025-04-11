@@ -36,9 +36,9 @@ const WorkExp = () => {
       "duration": "July 2021 - August 2023",
       "desgn": "Senior Software Engineer",
       "resp": [
-        "Tested and debugged over 10,000 COBOL programs, resulting in a 10% reduction in production errors.",
-        "Automated administrative tasks using COBOL and JCL, enhancing time efficiency by 33%.",
-        "Developed and maintained API endpoints and optimized the payment processing and transfer procedures by 15%."
+        "Spearheaded the transition of legacy payment processing modules to a modern front-end architecture using ReactJS, which improved transaction processing speed by 15% and enhanced code maintainability.",
+        "Focused on building scalable, secure, and performant web applications, implementing RESTful APIs, optimizing database interactions, and ensuring seamless user experiences.",
+        "Collaborated effectively within Agile teams, participating in all stages of the SDLC, from requirements gathering and design to testing, deployment, and maintenance."
       ]
     },
     {
@@ -65,8 +65,8 @@ const WorkExp = () => {
       "duration": "Sept 2019 - May 2020",
       "desgn": "Co - Founder / Android App Developer",
       "resp":[
-        "Created and maintained detailed business plans on ways to use Google AdSense tools to generate revenue and advertise our product and obtained sponsorship of 15 lacs INR from Innovative Entrepreneurship Development Centre (IEDC).",
-        "Improved android app UI/UX, enhancing app performance by 30%."
+        "Co-founded Unlock and developed a Python/Django web app integrated with Google AdSense, generating revenue and securing a 15 lacs INR sponsorship from IEDC.",
+        "Improved Android app UI/UX and web app performance, resulting in a combined 30% enhancement."
       ]
     },
   ]
