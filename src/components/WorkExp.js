@@ -11,65 +11,63 @@ import { GridItem2 } from './Home';
 const WorkExp = () => {
   window.scrollTo(0, 0);
   const workArr = [
-    {
-      "comp": "Bob Murphy Access Center (BMAC), CSULB",
-      "duration": "August 2024 - Present",
-      "desgn": "Graduate Student Assistant (GSA)",
-      "resp": [
-        "Analyze exam request data, identifying trends and patterns to improve resource allocation and predict future demand, reducing student wait times by 10% increasing efficiency.",
-        "Effectively resolve student/faculty inquiries, showcasing strong communication and management skills."
-      ]
-    },
-    {
-      "comp": "Extern",
-      "duration": "June 2024 - July 2024",
-      "desgn": "AI Risk Management Market Research Extern",
-      "resp": [
-        "Carried out detailed secondary research to pinpoint, scrutinize, and categorize common AI risks.",
-        "Undertook extensive research on AI risks and organized them according to the AI risk framework.",
-        "Developed a detailed case study that illustrates the potential business impacts of certain AI risks.",
-        "Provided strategic insights and practical suggestions to clients for managing and mitigating AI risks."
-      ]
-    },
-    {
-      "comp": "Capgemini India Pvt. Ltd.",
-      "duration": "July 2021 - August 2023",
-      "desgn": "Senior Software Engineer",
-      "resp": [
-        "Spearheaded the transition of legacy payment processing modules to a modern front-end architecture using ReactJS, which improved transaction processing speed by 15% and enhanced code maintainability.",
-        "Focused on building scalable, secure, and performant web applications, implementing RESTful APIs, optimizing database interactions, and ensuring seamless user experiences.",
-        "Collaborated effectively within Agile teams, participating in all stages of the SDLC, from requirements gathering and design to testing, deployment, and maintenance."
-      ]
-    },
-    {
-      "comp": "UAS NMIMS",
-      "duration": "Oct 2020 - June 2021",
-      "desgn": "Full Stack Web Developer",
-      "resp":[
-        "Used Agile methodology and problem-solving skills to develop web apps and ranked within the top 5 in many competitions.",
-        "Optimized the UAS website code to increase performance and decrease its loading time by 20%."
-      ]
-    },
-    {
-      "comp": "Eamvey Careers",
-      "duration": "July 2020 - Aug 2020",
-      "desgn": "Full Stack Web Developer",
-      "resp":[
-        "Performed website testing, identifying and reporting over 20 bugs, leading to improved website quality.",
-        "Designed and documented system architecture using UML diagrams, enhancing code maintainability and team collaboration.",
-        "Implemented front-end features and UI elements using HTML, CSS, and JavaScript, contributing to improved website user experience."
-      ]
-    },
-    {
-      "comp": "Unlock (Startup)",
-      "duration": "Sept 2019 - May 2020",
-      "desgn": "Co - Founder / Android App Developer",
-      "resp":[
-        "Co-founded Unlock and developed a Python/Django web app integrated with Google AdSense, generating revenue and securing a 15 lacs INR sponsorship from IEDC.",
-        "Improved Android app UI/UX and web app performance, resulting in a combined 30% enhancement."
-      ]
-    },
-  ]
+  {
+    "comp": "Bob Murphy Access Center (BMAC), CSULB",
+    "duration": "August 2024 - Present",
+    "desgn": "Graduate Student Assistant",
+    "resp": [
+      "Reduced student wait times by 10% by engineering an optimized process for exam request management, achieved through detailed data analysis and trend identification.",
+      "Streamlined support workflows by systematically investigating and resolving complex technical and procedural issues for students and faculty."
+    ]
+  },
+  {
+    "comp": "AI Risk Management Market Research",
+    "duration": "June 2024 - July 2024",
+    "desgn": "Extern",
+    "resp": [
+      "Carried out detailed secondary research to pinpoint, scrutinize, and categorize common AI risks.",
+      "Undertook extensive research on AI risks and organized them according to the AI risk framework.",
+      "Developed a detailed case study that illustrates the potential business impacts of certain AI risks."
+    ]
+  },
+  {
+    "comp": "Capgemini India Pvt. Ltd.",
+    "duration": "July 2021 - August 2023",
+    "desgn": "Senior Software Engineer",
+    "resp": [
+      "Accelerated transaction processing speed by 15% by spearheading the migration of legacy payment modules to a modern React.js frontend architecture.",
+      "Enhanced application scalability and security by implementing RESTful APIs and optimizing database interactions within an Agile/Scrum framework.",
+      "Contributed to all stages of the SDLC, from requirements gathering and design to testing and deployment, ensuring high-quality software delivery."
+    ]
+  },
+  {
+    "comp": "UAS NMIMS",
+    "duration": "Oct 2020 - June 2021",
+    "desgn": "Full Stack Web Developer",
+    "resp":[
+      "Achieved multiple top-5 placements in national competitions by developing high-performance web applications using Agile methodologies.",
+      "Improved user experience by optimizing the UAS website codebase, resulting in 20% faster page loading times."
+    ]
+  },
+  {
+    "comp": "Eamvey Careers",
+    "duration": "July 2020 - Aug 2020",
+    "desgn": "Full Stack Web Developer",
+    "resp":[
+      "Improved website quality and stability by performing comprehensive testing to identify, document, and report over 20 critical bugs.",
+      "Enhanced code maintainability and team collaboration by designing and documenting the complete system architecture using UML diagrams."
+    ]
+  },
+  {
+    "comp": "Unlock (Startup)",
+    "duration": "Sept 2019 - May 2020",
+    "desgn": "Co - Founder / Android App Developer",
+    "resp":[
+      "Secured 15 lacs INR in sponsorship by co-founding the startup and developing a Python/Django web app integrated with Google AdSense for revenue generation.",
+      "Improved overall application engagement by enhancing the Android app UI/UX and web app performance, achieving a combined 30% performance boost."
+    ]
+  }
+];
   return (
     <ProjectContainer>
       {workArr && workArr.map((work, index) => (

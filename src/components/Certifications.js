@@ -14,6 +14,14 @@ const Certifications = () => {
   window.scrollTo(0, 0);
   const certArr = [
     {
+      "title": "Generative AI with Large Language Models",
+      "doc": "May 2025",
+      "description": "Completed a comprehensive course on the LLM project lifecycle, from model architecture and fine-tuning to building practical, end-to-end AI applications.",
+      "skills": "Generative AI, LLMs, Transformer Architecture, Fine-Tuning, PEFT, RLHF, RAG, LangChain, Prompt Engineering",
+      "issued": "Coursera | DeepLearning.AI & AWS",
+      "link": ""
+    },
+    {
       "title": "Back End Development and APIs",
       "doc": "13 April, 2024",
       "description": "Enhanced my back end development by building projects and add to my MERN stack skillset.",
@@ -22,7 +30,7 @@ const Certifications = () => {
       "link": "https://www.udemy.com/certificate/UC-c1effc75-970d-44ed-9067-40e72d5c36ab/"
     },
     {
-      "title": "Meta Front-End Developer Certificate",
+      "title": "Meta Front-End Developer Professional Certification",
       "doc": "24th Feb, 2023",
       "description": "Completed Meta's comprehensive front-end development program, mastering React, JavaScript, and modern web development techniques.",
       "skills": "React, JavaScript, HTML, CSS, Front-End Development, Version Control, Git",

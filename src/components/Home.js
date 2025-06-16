@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 import {
   LinkedIn,
   GitHub,
-  ReadMore,
  } from '@mui/icons-material';
  import XIcon from '@mui/icons-material/X';
  import RedditIcon from '@mui/icons-material/Reddit';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, GridItem2 } from './Home';
 import styled from 'styled-components';
 import { 
@@ -7,10 +7,12 @@ import {
   CardContent,
   CardActions,
   Typography,
-  Button
+  Button,
+  Box // 1. Import Box for better layout control
 } from '@mui/material';
 import { Zoom } from 'react-awesome-reveal';
 
+// No changes to cardStyle, it's already great for the container
 let cardStyle = { 
   maxWidth: "100%",
   borderRadius: "20px", 
@@ -18,7 +20,9 @@ let cardStyle = {
   backgroundColor: "rgb(40, 40, 40)",
   boxShadow: 0,
   color: "white",
-  justifyContent: "start",
+  display: 'flex',
+  flexDirection: 'column',
+  height: '100%' // Ensure cards in the same row are the same height
 }
 let customTypo = {
   color: "white",
@@ -28,7 +32,30 @@ let customTypo = {
 
 const Projects = () => {
   window.scrollTo(0, 0);
+  const [expanded, setExpanded] = useState({});
+
+  const handleToggleReadMore = (index) => {
+    setExpanded(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   const projArr = [
+    {
+      "image": "/personal-portfolio-react/ai_code_doc_generator.png",
+      "title": "AI Code Documentation Generator",
+      "desc": "A full-stack MERN application that leverages the Google Gemini API to automatically generate professional documentation for code functions, deployed on the cloud.",
+      "contrib": "Architected and developed the full end-to-end solution, including the frontend UI, backend API, and the complete CI/CD pipeline.",
+      "tech": "React, Node.js, Express.js, Docker, CI/CD (GitHub Actions), Google Gemini API, Nginx",
+      "keyAchiev": [
+        "Engineered a complete CI/CD pipeline with GitHub Actions for automated builds and cloud deployments.",
+        "Containerized both frontend and backend services using Docker and Docker Compose.",
+        "Integrated a large language model (LLM) to provide core application functionality."
+      ],
+      "gitLink": "https://github.com/parimalingle1805/ai-code-documentation-generator",
+      "link": "https://ai-doc-client.onrender.com/" // This is the live demo link
+    },
     {
       "image": "/personal-portfolio-react/medimatch.png",
       "title": "Medimatch Patient-Portal",
@@ -45,14 +72,15 @@ const Projects = () => {
     {
       "image": "/personal-portfolio-react/portfolio.png",
       "title": "Personal Portfolio Web App (ReactJS)",
-      "desc": "A responsive and interactive personal portfolio website built with ReactJS to showcase my front-end development and UX design skills",
+      "desc": "A responsive and interactive personal portfolio website built with ReactJS to showcase my front-end development and UX design skills. This project focuses on clean UI, smooth animations, and a fully responsive layout to ensure a great user experience on all devices.",
       "contrib": "Sole designer and developer, responsible for all aspects of the website, from concept to deployment.",
       "tech": "ReactJS, HTML, CSS, JavaScript, Git, Github Pages, Figma, Material-UI",
       "keyAchiev": [
         "Conducted User research to prioritize user needs, implemented a user-friendly interface reducing query resolve times by 60% improving overall engagement and collaboration for IIT bombay",
         "Secured 5th place globally in the contest, showcasing innovative thinking, problem-solving,the app's scalability and user-friendly interface."
       ],
-      "gitLink": "https://github.com/parimalingle1805/personal-portfolio-react.git"
+      "gitLink": "https://github.com/parimalingle1805/personal-portfolio-react.git",
+      "link": "https://parimalingle1805.github.io/personal-portfolio-react/"
     },
     {
       "image": "/personal-portfolio-react/farmersForum.png",
@@ -90,58 +118,110 @@ const Projects = () => {
       ],
       "gitLink": "https://github.com/parimalingle1805/hackathon_4.0_15.git"
     },
-    
   ];
+
+  const CHAR_LIMIT = 120; // Shortened the limit slightly for a cleaner look
+
   return (
     <ProjectContainer>
-      {projArr && projArr.map((proj, index) => (
-        <GridItem2 style={{justifyContent: "space-between"}} key={index}>
-          <Zoom>
-              <Card sx={cardStyle}>
-                <CardMedia
-                  style={{ margin: '1em', borderRadius: "20px" }}
-                  sx={{ height: 300 }}
-                  image={proj.image}
-                  title="project image"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h4" component="div">
-                    {proj.title}
-                  </Typography>
-                  <Typography gutterBottom variant="h6">
-                    {proj.desc}
-                  </Typography>
-                  <Typography variant="body1" sx={customTypo}>
-                    My Role: <i>{proj.contrib}</i>
-                  </Typography>
-                  <Typography variant="body1" sx={customTypo}>
-                    Technologies Used: {proj.tech}
-                  </Typography>
-                  <Typography variant="body1" sx={customTypo}>
-                    Key Achievements:
-                    <ul>
-                      {proj.keyAchiev && proj.keyAchiev.map((achiev, index) => (
-                        <li key={index}>{achiev}</li>
-                      ))}
-                    </ul>
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button href={proj.gitLink} size="small" target='_blank'>Visit Github Repository</Button>
-                </CardActions>
-              </Card>
-          </Zoom>
-        </GridItem2>
-      ))}
+      {projArr && projArr.map((proj, index) => {
+        const isExpanded = !!expanded[index]; // Use !! to ensure it's a boolean
+        const needsTruncation = proj.desc.length > CHAR_LIMIT;
+        
+        const displayText = isExpanded || !needsTruncation 
+          ? proj.desc 
+          : `${proj.desc.substring(0, CHAR_LIMIT)}...`;
+
+        return (
+          <GridItem2 key={index}>
+            <Zoom>
+                <Card sx={cardStyle}>
+                  {/* Use Box to make the content area grow, pushing actions to the bottom */}
+                  <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                    <CardMedia
+                      style={{ margin: '1em', borderRadius: "20px" }}
+                      sx={{ height: 300 }}
+                      image={proj.image}
+                      title="project image"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h4" component="div">
+                        {proj.title}
+                      </Typography>
+                      
+                      <Typography gutterBottom variant="h6" component="p">
+                        {displayText}
+                      </Typography>
+
+                      {/* Conditionally render the rest of the content */}
+                      {isExpanded && (
+                        <>
+                          <Typography variant="body1" sx={customTypo}>
+                            My Role: <i>{proj.contrib}</i>
+                          </Typography>
+                          <Typography variant="body1" sx={customTypo}>
+                            Technologies Used: {proj.tech}
+                          </Typography>
+                          <Typography variant="body1" sx={customTypo}>
+                            Key Achievements:
+                            <ul>
+                              {proj.keyAchiev && proj.keyAchiev.map((achiev, index) => (
+                                <li key={index}>{achiev}</li>
+                              ))}
+                            </ul>
+                          </Typography>
+                        </>
+                      )}
+                    </CardContent>
+                  </Box>
+                  
+                  {/* 2. Group all actions together in CardActions for better alignment */}
+                  <CardActions sx={{ justifyContent: 'space-between', padding: '0 16px 8px' }}>
+                    {/* 3. Make the Github button more visible */}
+                    <Button 
+                      variant="outlined" 
+                      href={proj.gitLink} 
+                      size="small" 
+                      target='_blank'
+                    >
+                      Visit Github
+                    </Button>
+                    {proj.link &&
+                      <Button
+                        variant="outlined" 
+                        href={proj.link} 
+                        size="small" 
+                        target='_blank'
+                      >
+                        Live Demo
+                      </Button>
+                    }
+
+                    {/* 4. Make the Read More button more visible and clear */}
+                    {needsTruncation && (
+                      <Button 
+                        size="small" 
+                        onClick={() => handleToggleReadMore(index)}
+                      >
+                        {isExpanded ? 'Read Less' : 'Read More'}
+                      </Button>
+                    )}
+                  </CardActions>
+                </Card>
+            </Zoom>
+          </GridItem2>
+        )
+      })}
     </ProjectContainer>
   )
 }
 
 export default Projects;
 
+// Your responsive grid container remains the same
 const ProjectContainer = styled(Container)`
   grid-template-columns: 30vw 30vw 30vw;
-
+  
   .heading {
     align-self: center;
     font-size: 3em;
