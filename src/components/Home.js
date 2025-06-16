@@ -109,7 +109,7 @@ const Home = () => {
                     View My Resume
                   </Icons>
                   <Icons style={resumeButtonStyle}> 
-                    <a style={{color:"white", textDecoration:"none"}} href = '/personal-portfolio-react/resume.pdf' target='_blank' download="Parimal_Ingle_Resume_2024">
+                    <a style={{color:"white", textDecoration:"none"}} href = '/personal-portfolio-react/resume.pdf' target='_blank' download="Parimal_Ingle_Resume">
                       Download Resume
                     </a>
                   </Icons>
