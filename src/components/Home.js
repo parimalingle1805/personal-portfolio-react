@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import { Zoom } from 'react-awesome-reveal';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
@@ -36,7 +38,18 @@ let socialIcons = [
   }
 ];
 const Home = () => {
-  window.scrollTo(0, 0);
+  const { pathname } = useLocation();
+ 
+   useEffect(() => {
+    // Wait for 100 milliseconds before scrolling
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 50);
+
+    // Cleanup the timer if the user navigates away before it fires
+    return () => clearTimeout(timer);
+  }, [pathname]);
+
   let iconUrls = [
     {
       icon: '/personal-portfolio-react/workExpIcon.png',
