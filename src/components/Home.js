@@ -41,7 +41,7 @@ const Home = () => {
   const { pathname } = useLocation();
  
    useEffect(() => {
-    // Wait for 100 milliseconds before scrolling
+    // Wait for 50 milliseconds before scrolling
     const timer = setTimeout(() => {
       window.scrollTo(0, 0);
     }, 50);
