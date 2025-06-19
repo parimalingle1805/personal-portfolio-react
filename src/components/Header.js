@@ -64,7 +64,7 @@ const Menu = styled.div`
         font-weight: 500;
         text-transform: uppercase;
         padding: 0 10px;
-        margin: 0 3vw;
+        margin: 0 2vw;
         flex-wrap: nowrap;
 
         @media(max-width: 1550px){
