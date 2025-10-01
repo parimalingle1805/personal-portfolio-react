@@ -67,7 +67,7 @@ const Menu = styled.div`
         margin: 0 2vw;
         flex-wrap: nowrap;
 
-        @media(max-width: 1550px){
+        @media(max-width: 1500px){
         display:none;
         }
     }
@@ -87,7 +87,7 @@ const CustomMenu = styled(MenuIcon)`
     color: white;
     cursor: pointer;
 
-    @media(min-width: 1550px){
+    @media(min-width: 1500px){
         pointer-events: none;
         color: rgb(20, 20, 20);
     }
@@ -120,7 +120,7 @@ const BurgerNav = styled.div`
         }
     }
 
-    @media(min-width: 1550px){
+    @media(min-width: 1500px){
         display: none;
     }
     @media(max-width: 1080px){
@@ -135,7 +135,7 @@ const CustomClose = styled(CloseIcon)`
     cursor: pointer;
     color: white;
 
-    @media(min-width: 1550px){
+    @media(min-width: 1500px){
         color: black;
     }
 `;

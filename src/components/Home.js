@@ -161,7 +161,7 @@ const GridItem = styled.div`
   margin: 0.7em;
   align-content: space-between;
   border-radius: 25px;
-  @media(min-width: 1440px){
+  @media(min-width: 1600px){
     font-size: 1.2em;
   }
   .link {

@@ -15,7 +15,6 @@ import {
 const About = () => {
   window.scrollTo(0, 0);
 
-  // 1. Restored all 6 experience entries from your original file
   let exp =[
     {
       date: "August 2024 - Present",
@@ -49,7 +48,6 @@ const About = () => {
     }
   ];
 
-  // 2. Updated Education to match the resume
   let edu = [
     {
       date: "Expected May 2025",
@@ -63,11 +61,10 @@ const About = () => {
     }
   ];
 
-  // 3. Updated and structured Skills array to create the pills
   let skillSet = [
     {
       title: "Programming Languages",
-      skills: ["JavaScript (ES6+)", "Python", "Java", "C++"]
+      skills: ["JavaScript/TypeScript", "GraphQL", "Python", "Java", "C++"]
     },
     {
       title: "Web Development",
@@ -75,10 +72,10 @@ const About = () => {
     },
     {
       title: "DevOps & Cloud",
-      skills: ["Docker", "Docker Compose", "CI/CD (GitHub Actions)", "Nginx", "Render (PaaS)", "Git"]
+      skills: ["Docker", "Kubernetes", "Amazon Web Services (AWS)", "CI/CD (GitHub Actions)", "Nginx", "Render (PaaS)", "Git"]
     },
     {
-      title: "Databases & AI",
+      title: "Databases & Generative AI",
       skills: ["SQL (MySQL, Oracle)", "NoSQL (MongoDB)", "LLM API Integration", "Prompt Engineering"]
     },
     {
@@ -87,6 +84,7 @@ const About = () => {
     }
   ];
 
+  let hColor = "#ffe600ff"
   return (
     <AboutContainer1>   
       <GridItem>
@@ -96,9 +94,11 @@ const About = () => {
       </GridItem>
       <Summary>
         <Zoom>
-          {/* 4. Updated summary text from your resume */}
           <p className='summary-text'>
-            Full-Stack Software Engineer with proven expertise in MERN stack applications, cloud deployment, and CI/CD automation. Skilled in architecting scalable, user-centric solutions with a strong focus on performance and modern DevOps practices.
+            Product-oriented Full-Stack Engineer who transforms ideas into scalable, <span style={{ color: hColor }}>AI-powered</span> web applications. 
+            My expertise in <span style={{ color: hColor }}>React, Node.js, and AWS</span>, 
+            combined with a focus on robust <span style={{ color: hColor }}>CI/CD pipelines</span>, 
+            has delivered solutions that cut release cycles from weeks to days and secured<span style={{ color: hColor }}> $50,000+ </span>in funding and sponsorships.
           </p>
         </Zoom>
       </Summary>
@@ -143,7 +143,6 @@ const About = () => {
       <BriefExp>
         <Zoom>
           <h1 className='heading'>Skills</h1>
-          {/* 5. New mapping logic for skills to create the pill effect */}
           {skillSet && skillSet.map((category, index) => (
             <SkillCategory key={index}>
               <p className='expTitle' style={{fontSize: '1.1em', marginBottom: '0.5em'}}>{category.title}</p>
@@ -162,7 +161,6 @@ const About = () => {
 
 export default About;
 
-// --- ORIGINAL STYLED COMPONENTS (UNCHANGED) ---
 
 const AboutContainer1 = styled(Container)`
   @media(max-width: 1080px){
@@ -227,13 +225,13 @@ const IconWrap1 = styled(IconWrap)`
   }
 `;
 
-// --- NEW STYLED COMPONENTS FOR SKILL PILLS ---
 
 const SkillCategory = styled.div`
   margin-bottom: 1.5em;
 `;
 
 const SkillPillContainer = styled.div`
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: 0.75em;
