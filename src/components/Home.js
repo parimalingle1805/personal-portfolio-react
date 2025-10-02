@@ -87,8 +87,10 @@ const Home = () => {
           <ProfilePic alt='Profile Picture'/>
           <SideInfo>
             <h1>Parimal Ingle</h1>
-            <h3> Full-Stack Developer | Bridging Technology and Design for Exceptional User Experiences</h3>
-            <p>Driven MSIS student passionate about building scalable web applications and creating intuitive user experiences.</p>
+            <h3> Full-Stack Engineer | Architecting AI-Powered, Production-Ready Applications</h3>
+            <p>I build and deploy high-impact web solutions using React, Python, and Generative AI. 
+              My passion is creating intuitive, user-centric tools that solve complex problems, 
+              delivering products that have boosted operational efficiency by over 70%.</p>
           </SideInfo>
         </GridItem1>
         {iconUrls && iconUrls.map((iconUrl, index) => (
@@ -214,12 +216,13 @@ const ProfilePic = styled.img`
 const SideInfo = styled.div`
   display: flex;
   flex-direction: column;
-  font-weight: 600;
-  font-size: 1.2em;
+  font-weight: 400;
+  font-size: 1em;
   margin: 1em 2em 1em 0em;
+  line-height: 1.5em;
   @media(max-width: 512px){
-    font-weight: 300;
-    font-size: 1em;
+    font-weight: 200;
+    font-size: 0.8em;
     padding-top: 1em;
     margin: 0em 1em 0em 0em;
   }
