@@ -77,6 +77,7 @@ const Home = () => {
     }
   ];
   let resumeButtonStyle = {
+    cursor: "pointer",
     gridColumn: "1 / 3",
     borderRadius:"20px",
     padding: "0.5em"
