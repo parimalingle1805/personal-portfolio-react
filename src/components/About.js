@@ -17,40 +17,20 @@ const About = () => {
 
   let exp =[
     {
-      date: "August 2024 - Present",
-      title: "Graduate Student Assistant",
-      company: "Bob Murphy Access Center (BMAC), CSULB"
+      date: "Nov 2024 - Present",
+      title: "Software Engineer",
+      company: "ServiceNow, GA"
     },
     {
-      date: "June 2024 - July 2024",
-      title: "AI Risk Management Market Research Extern",
-      company: "Extern"
+      date: "Aug 2020 - July 2023",
+      title: "Software Engineer",
+      company: "Orion Technolab, India"
     },
-    {
-      date: "July 2021 - August 2023",
-      title: "Senior Software Engineer",
-      company: "Capgemini, Financial Services"
-    },
-    {
-      date: "Oct 2020 - June 2021",
-      title: "Full Stack Web Developer",
-      company: "UAS NMIMS"
-    },
-    {
-      date: "July 2020 - Aug 2020",
-      title: "Full Stack Web Developer",
-      company: "Eamvey Careers"
-    },
-    {
-      date: "Sept 2019 - May 2020",
-      title: "Co - Founder / Android App Developer",
-      company: "Unlock (startup)"
-    }
   ];
 
   let edu = [
     {
-      date: "Expected May 2025",
+      date: "May 2025",
       title: "Master of Science in Information Systems",
       company: "California State University, Long Beach"
     },
@@ -63,28 +43,47 @@ const About = () => {
 
   let skillSet = [
     {
-      title: "Programming Languages",
-      skills: ["JavaScript/TypeScript", "GraphQL", "Python", "Java", "C++"]
+      title: "Languages & Web Core",
+      skills: [
+        "Java", "JavaScript", "TypeScript", "Python", "C/C++", 
+        "HTML5", "CSS3", "JSON", "XML", "AJAX", "JSP", 
+        "Servlets", "WebSockets", "CMS"
+      ]
     },
     {
-      title: "Web Development",
-      skills: ["React.js/Redux", "Node.js", "Express.js", "Django", "REST APIs/GraphQL", "HTML5", "CSS3", "WordPress (CMS)"]
+      title: "Frameworks, Libraries & APIs",
+      skills: [
+        "Spring Boot", "Spring MVC", "Spring Security", "Microservices Architecture", 
+        "Hibernate/JPA", "React.js", "Vue.js", "Angular", "Node.js", 
+        "Express.js", "Django", "Vite", "REST APIs", "GraphQL"
+      ]
     },
     {
-      title: "DevOps & Cloud",
-      skills: ["Docker", "Kubernetes", "Amazon Web Services (AWS)", "CI/CD (GitHub Actions)", "Nginx", "Render (PaaS)", "Git"]
+      title: "Cloud, DevOps & Infrastructure",
+      skills: [
+        "AWS (EC2, S3, RDS, Lambda)", "Azure", "GCP", "Docker", "Kubernetes", 
+        "Jenkins", "Terraform", "CI/CD Pipelines", "Nginx", 
+        "ServiceNow Platform (SAM Pro)", "Linux", "Unix", "Windows"
+      ]
     },
     {
-      title: "Databases & Generative AI",
-      skills: ["SQL (MySQL, Oracle)", "NoSQL (MongoDB)", "LLM API Integration", "Prompt Engineering"]
+      title: "Data Engineeering & AI",
+      skills: [
+        "SQL", "NoSQL", "PostgreSQL", "MySQL", "MongoDB", 
+        "AI-powered Tools", "Workflow Automation", "AI-driven Insights"
+      ]
     },
     {
-      title: "Tools & Methodologies",
-      skills: ["Linux/Unix", "Agile/Scrum", "Data Structures & Algorithms", "Figma", "Postman"]
+      title: "Tools, Testing & Methodologies",
+      skills: [
+        "Git", "GitHub", "IntelliJ IDEA", "Postman", "Figma", "Tableau", 
+        "Apache Tomcat", "WebSphere", "JUnit", "Jest", "Mocha", 
+        "Test Automation", "Agile", "Scrum", "SDLC", "Waterfall"
+      ]
     }
   ];
 
-  let hColor = "#ffe600ff"
+  let hColor = "#00E5FF"
   return (
     <AboutContainer1>   
       <GridItem>
@@ -95,10 +94,9 @@ const About = () => {
       <Summary>
         <Zoom>
           <p className='summary-text'>
-            Product-oriented Full-Stack Engineer who transforms ideas into scalable, <span style={{ color: hColor }}>AI-powered</span> web applications. 
-            My expertise in <span style={{ color: hColor }}>React, Node.js, and AWS</span>, 
-            combined with a focus on robust <span style={{ color: hColor }}>CI/CD pipelines</span>, 
-            has delivered solutions that cut release cycles from weeks to days and secured<span style={{ color: hColor }}> $50,000+ </span>in funding and sponsorships.
+            Full-Stack Software Engineer with <span style={{ color: hColor }}> 4+ years of experience</span> building scalable, production-grade applications. 
+            My expertise in <span style={{ color: hColor }}> Java, Spring Boot, and Microservices</span>, combined with cloud-native skills in 
+            <span style={{ color: hColor }}> AWS and Docker</span>, enables me to deliver secure, high-performance solutions across enterprise environments.
           </p>
         </Zoom>
       </Summary>
@@ -118,13 +116,16 @@ const About = () => {
       </GridItem2>
       <BriefExp style={{gridRow: "span 2"}}>
         <Zoom>
-          <h1 className='heading'>Experience</h1>
-          {exp && exp.map((exp, index) => (
-            <div key={index} style={{marginBottom: '1.5em'}}>
-              <p className='expText'>{exp.date}</p>
-              <p className='expTitle'>{exp.title}</p>
-              <p className='expText'>{exp.company}</p>
-            </div>
+          <h1 className='heading'>Skills</h1>
+          {skillSet && skillSet.map((category, index) => (
+            <SkillCategory key={index}>
+              <p className='expTitle' style={{fontSize: '1.1em', marginBottom: '0.5em'}}>{category.title}</p>
+              <SkillPillContainer>
+                {category.skills.map((skill, skillIndex) => (
+                  <SkillPill key={skillIndex}>{skill}</SkillPill>
+                ))}
+              </SkillPillContainer>
+            </SkillCategory>
           ))}
         </Zoom>
       </BriefExp>
@@ -142,16 +143,13 @@ const About = () => {
       </BriefExp>
       <BriefExp>
         <Zoom>
-          <h1 className='heading'>Skills</h1>
-          {skillSet && skillSet.map((category, index) => (
-            <SkillCategory key={index}>
-              <p className='expTitle' style={{fontSize: '1.1em', marginBottom: '0.5em'}}>{category.title}</p>
-              <SkillPillContainer>
-                {category.skills.map((skill, skillIndex) => (
-                  <SkillPill key={skillIndex}>{skill}</SkillPill>
-                ))}
-              </SkillPillContainer>
-            </SkillCategory>
+          <h1 className='heading'>Experience</h1>
+          {exp && exp.map((exp, index) => (
+            <div key={index} style={{marginBottom: '1.5em'}}>
+              <p className='expText'>{exp.date}</p>
+              <p className='expTitle'>{exp.title}</p>
+              <p className='expText'>{exp.company}</p>
+            </div>
           ))}
         </Zoom>
       </BriefExp>      
