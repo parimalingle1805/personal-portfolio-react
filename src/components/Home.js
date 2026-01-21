@@ -88,10 +88,12 @@ const Home = () => {
           <ProfilePic alt='Profile Picture'/>
           <SideInfo>
             <h1>Parimal Ingle</h1>
-            <h3> Full-Stack Engineer | Architecting AI-Powered, Production-Ready Applications</h3>
-            <p>I build and deploy high-impact web solutions using React, Python, and Generative AI. 
-              My passion is creating intuitive, user-centric tools that solve complex problems, 
-              delivering products that have boosted operational efficiency by over 70%.</p>
+            <h3>Software Engineer | Java, Spring Boot, Microservices | AWS, REST & GraphQL APIs | ServiceNow</h3>
+            <p>
+              I architect scalable, production-grade enterprise applications using Java, Spring Boot, and AWS. 
+              With 4+ years of experience in secure microservices and cloud-native architectures, 
+              I deliver robust full-stack solutions that drive deployment reliability and operational excellence.
+            </p>
           </SideInfo>
         </GridItem1>
         {iconUrls && iconUrls.map((iconUrl, index) => (
@@ -165,13 +167,13 @@ const GridItem = styled.div`
   align-content: space-between;
   border-radius: 25px;
   @media(min-width: 1600px){
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
   .link {
     color: rgb(200, 200, 200);
     text-decoration: underline;
     text-decoration-color: rgb(40, 40, 40);
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 500;
     text-transform: uppercase;
     margin: 0.5em;
