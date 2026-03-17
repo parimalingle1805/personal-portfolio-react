@@ -88,11 +88,11 @@ const Home = () => {
           <ProfilePic alt='Profile Picture'/>
           <SideInfo>
             <h1>Parimal Ingle</h1>
-            <h3>Software Engineer | Java, Spring Boot, Microservices | AWS, REST & GraphQL APIs | ServiceNow</h3>
+            <h3>Full Stack Engineer | React, TypeScript, Node.js | AWS & AI Agent Architectures</h3>
             <p>
-              I architect scalable, production-grade enterprise applications using Java, Spring Boot, and AWS. 
-              With 4+ years of experience in secure microservices and cloud-native architectures, 
-              I deliver robust full-stack solutions that drive deployment reliability and operational excellence.
+              I am a Full Stack Engineer with over 4 years of experience blending the 0-to-1 agility of a startup founder 
+              with the security standards of enterprise fintech. I architect scalable cloud platforms and AI pipelines, 
+              specializing in React, TypeScript, Node.js, and Python.
             </p>
           </SideInfo>
         </GridItem1>

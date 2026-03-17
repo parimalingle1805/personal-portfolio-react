@@ -43,12 +43,12 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <MailOutline />,
-      text: 'parimal@cvejobs.com',
+      text: 'parimal.ingle18@gmail.com',
       copyable: true,
     },
     {
       icon: <Phone />,
-      text: '+1 (401) 236-5205',
+      text: '+1 (562) 846-0322',
       copyable: true,
     },
     {

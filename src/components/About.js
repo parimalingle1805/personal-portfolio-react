@@ -15,17 +15,27 @@ import {
 const About = () => {
   window.scrollTo(0, 0);
 
-  let exp =[
+  let exp = [
     {
-      date: "Nov 2024 - Present",
-      title: "Software Engineer",
-      company: "ServiceNow, GA"
+      date: "May 2025 - Present",
+      title: "Full Stack Developer",
+      company: "Saayam For All"
     },
     {
-      date: "Aug 2020 - July 2023",
-      title: "Software Engineer",
-      company: "Orion Technolab, India"
+      date: "July 2021 - Aug 2023",
+      title: "Senior Software Engineer",
+      company: "Capgemini (Financial Services)"
     },
+    {
+      date: "Oct 2020 - June 2021",
+      title: "Web Development Lead",
+      company: "UAS NMIMS"
+    },
+    {
+      date: "Sept 2019 - May 2020",
+      title: "Co-Founder / Lead Full Stack Engineer",
+      company: "Unlock (SaaS Startup)"
+    }
   ];
 
   let edu = [
@@ -41,44 +51,40 @@ const About = () => {
     }
   ];
 
-  let skillSet = [
+  let skillSet =[
     {
       title: "Languages & Web Core",
-      skills: [
-        "Java", "JavaScript", "TypeScript", "Python", "C/C++", 
-        "HTML5", "CSS3", "JSON", "XML", "AJAX", "JSP", 
-        "Servlets", "WebSockets", "CMS"
+      skills:[
+        "JavaScript", "TypeScript", "Python", "C/C++",
+        "HTML5", "CSS3", "JSON", "GraphQL", "WebSockets"
       ]
     },
     {
       title: "Frameworks, Libraries & APIs",
-      skills: [
-        "Spring Boot", "Spring MVC", "Spring Security", "Microservices Architecture", 
-        "Hibernate/JPA", "React.js", "Vue.js", "Angular", "Node.js", 
-        "Express.js", "Django", "Vite", "REST APIs", "GraphQL"
+      skills:[
+        "React.js", "Node.js", "Express.js", "Django",
+        "Vite", "Zod", "Server-Sent Events (SSE)", "Mapbox API", "REST APIs"
       ]
     },
     {
       title: "Cloud, DevOps & Infrastructure",
-      skills: [
-        "AWS (EC2, S3, RDS, Lambda)", "Azure", "GCP", "Docker", "Kubernetes", 
-        "Jenkins", "Terraform", "CI/CD Pipelines", "Nginx", 
-        "ServiceNow Platform (SAM Pro)", "Linux", "Unix", "Windows"
+      skills:[
+        "Docker", "Kubernetes", "CI/CD Pipelines", "GitHub Actions",
+        "AWS (EC2, S3, RDS)", "Jenkins", "Linux", "Nginx"
       ]
     },
     {
-      title: "Data Engineeering & AI",
-      skills: [
-        "SQL", "NoSQL", "PostgreSQL", "MySQL", "MongoDB", 
-        "AI-powered Tools", "Workflow Automation", "AI-driven Insights"
+      title: "Data Engineering & AI",
+      skills:[
+        "PostgreSQL", "MongoDB", "Oracle SQL", "Google Genkit (ADK)",
+        "Gemini API", "Tree-sitter (AST)", "AI-Agent Architectures"
       ]
     },
     {
       title: "Tools, Testing & Methodologies",
-      skills: [
-        "Git", "GitHub", "IntelliJ IDEA", "Postman", "Figma", "Tableau", 
-        "Apache Tomcat", "WebSphere", "JUnit", "Jest", "Mocha", 
-        "Test Automation", "Agile", "Scrum", "SDLC", "Waterfall"
+      skills:[
+        "Git", "GitHub", "Postman", "Jest",
+        "SEO & WCAG Accessibility", "Agile", "Scrum", "SDLC"
       ]
     }
   ];
@@ -94,9 +100,9 @@ const About = () => {
       <Summary>
         <Zoom>
           <p className='summary-text'>
-            Full-Stack Software Engineer with <span style={{ color: hColor }}> 4+ years of experience</span> building scalable, production-grade applications. 
-            My expertise in <span style={{ color: hColor }}> Java, Spring Boot, and Microservices</span>, combined with cloud-native skills in 
-            <span style={{ color: hColor }}> AWS and Docker</span>, enables me to deliver secure, high-performance solutions across enterprise environments.
+            Full-Stack Software Engineer with <span style={{ color: hColor }}>4+ years of experience</span> blending the 0-to-1 agility of a startup founder 
+            with enterprise fintech compliance. My expertise in <span style={{ color: hColor }}>React, Node.js, and TypeScript</span>, combined with modern 
+            <span style={{ color: hColor }}> AI Agent Architectures</span>, enables me to deliver secure, scalable, and mathematically verified web platforms.
           </p>
         </Zoom>
       </Summary>
