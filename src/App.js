@@ -10,7 +10,7 @@ import WorkExp from './components/WorkExp';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" data-testid="app">
       <Header />
         <Routes basename="personal-portfolio-react">
               <Route exact path='/' element={<Home />} />

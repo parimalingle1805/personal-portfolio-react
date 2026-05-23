@@ -14,13 +14,13 @@ const WorkExp = () => {
   const workArr =[
     {
       "comp": "Saayam For All",
-      "duration": "May 2025 - Present",
+      "duration": "July 2025 - Present",
       "desgn": "Full Stack Developer",
       "resp":[
-        "Engineered responsive, dynamic React.js dashboards for real-time volunteer coordination and donation tracking, optimizing component rendering to improve UI load times by 25%.",
-        "Architected secure frontend-to-backend integrations, connecting React applications to Java/Spring Boot microservices via AWS API Gateway.",
-        "Implemented robust JWT session management and identity verification using AWS Cognito.",
-        "Strengthened platform reliability by participating in the deployment of containerized workloads to AWS EKS (Kubernetes) and authoring comprehensive automated test suites, reducing UI regression defects by 30%."
+        "Architected and integrated an internal local-first AI technical documentation tool using TypeScript and Google Genkit, designed to automate complex module analysis and accelerate volunteer engineering velocity by 30%.",
+        "Eliminated 100% of cloud infrastructure token costs and guaranteed data compliance by designing the tool to orchestrate model inference via a local developer pipeline, leveraging Ollama to serve Gemma models directly on client machines.",
+        "Engineered dynamic, real-time React dashboards featuring custom server-side pagination workflows and component memoization, reducing initial UI page load latencies by 25% and optimizing volunteer coordination layouts.",
+        "Integrated cryptographic logic-integrity checks via AST hashing (web-tree-sitter + SHA256) to mathematically guarantee zero AI-introduced logic drift or syntax regressions during automated code-block documentation parsing."
       ]
     },
     {
