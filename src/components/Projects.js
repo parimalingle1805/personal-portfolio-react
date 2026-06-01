@@ -42,6 +42,21 @@ const Projects = () => {
 
   const projArr =[
     {
+      "image": "/personal-portfolio-react/ai_content_scanner.png",
+      "title": "AI Content Provenance Scanner",
+      "desc": "A secure full stack web application architected to cryptographically detect synthetic media and deepfakes via C2PA and SynthID standards, reducing manual verification time to under 5 seconds.",
+      "contrib": "Architected a polyglot cloud environment, integrating a React frontend, a Node Express API, and Dockerized Python microservices securely routed through an AWS CloudFront reverse proxy.",
+      "tech": "React.js, Node.js, Express.js, PostgreSQL, MongoDB, Python, Docker, AWS (CloudFront, EC2, S3, WAF), Tailwind CSS",
+      "keyAchiev": [
+        "Deployed AWS CloudFront as a global Content Delivery Network and reverse proxy, securing the frontend with automated HTTPS and eliminating cross origin resource sharing errors.",
+        "Engineered a polyglot backend by isolating heavy Python machine learning libraries within Docker containers, preventing main thread blocking on the Express server during concurrent image processing.",
+        "Resolved Out of Memory kernel panics on constrained AWS EC2 infrastructure by repartitioning the Linux file system with a 2GB virtual swap file.",
+        "Configured AWS Web Application Firewall in monitor mode to prevent false positive payload rejections of raw binary image streams, ensuring seamless user uploads."
+      ],
+      "gitLink": "https://github.com/parimalingle1805/ai-content-scanner",
+      "link": "https://d1xdwf1wrjelil.cloudfront.net"
+    },
+    {
       "image": "/personal-portfolio-react/ai_code_doc_generator.png",
       "title": "AI Code Documentation Generator",
       "desc": "A deterministic, multi-agent AI platform built with Google Genkit and Gemini 3 Flash. Features an event-driven React UI and mathematically verified AST hashing to guarantee zero code hallucination, boosting team velocity by 15%.",
