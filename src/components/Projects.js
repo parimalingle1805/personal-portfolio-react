@@ -53,7 +53,7 @@ const Projects = () => {
         "Resolved Out of Memory kernel panics on constrained AWS EC2 infrastructure by repartitioning the Linux file system with a 2GB virtual swap file.",
         "Configured AWS Web Application Firewall in monitor mode to prevent false positive payload rejections of raw binary image streams, ensuring seamless user uploads."
       ],
-      "gitLink": "https://github.com/parimalingle1805/ai-content-scanner",
+      "gitLink": "https://github.com/parimalingle1805/ai-content-detector",
       "link": "https://d1xdwf1wrjelil.cloudfront.net"
     },
     {
@@ -73,12 +73,13 @@ const Projects = () => {
     {
       "image": "/personal-portfolio-react/medimatch.png",
       "title": "Medimatch Patient-Portal",
-      "desc": "An award-winning, AI-powered patient triage system built with Python, Django, and AWS. Engineered to accelerate healthcare decision-making by over 15% through intelligent symptom analysis and a scalable, containerized architecture.",
-      "contrib": "Lead Full Stack & Machine Learning Engineer, responsible for designing the predictive algorithms, database schemas, and robust AWS cloud deployment.",
-      "tech": "Python, Django, Scikit-Learn, AWS (RDS, EC2), Docker, PostgreSQL, REST APIs",
-      "keyAchiev":[
-        "Engineered an award-winning AI-powered patient triage system using Python and scikit-learn, ranking 1st in a graduate program batch judged by industry leaders from Microsoft, Blackrock, and the Senate office.",
-        "Deployed the containerized Django application to AWS using Docker and Amazon RDS for PostgreSQL, ensuring a scalable and highly available service for the human-in-the-loop validation workflow."
+      "desc": "An award-winning, ML-driven patient triage system. Engineered to accelerate healthcare decision-making by over 15% through a scikit-learn urgency classification model and a deterministic symptom-to-medicine PostgreSQL mapping engine, deployed across a scalable microservices architecture.",
+      "contrib": "Lead Full Stack & Machine Learning Engineer, responsible for designing the classification algorithms, complex relational database schemas, and robust AWS cloud deployment.",
+      "tech": "Node.js, React, Python, FastAPI, Scikit-Learn, AWS (RDS, EC2), Docker, PostgreSQL",
+      "keyAchiev": [
+        "Architected an award-winning ML patient triage platform utilizing a decoupled microservices architecture, ranking 1st in a graduate cohort judged by industry leaders from Microsoft, Blackrock, and the Senate office.",
+        "Isolated the scikit-learn binary classification model (urgency scoring) within a containerized Python FastAPI service, ensuring heavy inference execution did not block the primary Node.js and React API gateway.",
+        "Engineered a critical human-in-the-loop PostgreSQL database state machine, strictly enforcing doctor authorization workflows for automated, DB-mapped prescriptions to guarantee legal medical compliance."
       ],
       "gitLink": "https://github.com/parimalingle1805/patient-portal.git"
     },
