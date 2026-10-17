@@ -1,256 +1,257 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { Zoom } from 'react-awesome-reveal';
-import { Link } from 'react-router-dom';
-import {
-  Container,
-  GridItem,
-  GridItem2,
-  IconWrap,
-  Icons,
-  ProfilePic,
-  socialIcons
- } from './Home';
 
 const About = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    // If rendered as dedicated route, scroll to top or summary
+    const element = document.getElementById('summary');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
 
-  let exp = [
+  const edu = [
     {
-      date: "May 2025 - Present",
-      title: "Full Stack Developer",
-      company: "Saayam For All"
+      date: 'May 2025',
+      title: 'Master of Science in Information Systems (GPA 3.80)',
+      institution: 'California State University, Long Beach (CSULB)'
     },
     {
-      date: "July 2021 - Aug 2023",
-      title: "Senior Software Engineer",
-      company: "Capgemini (Financial Services)"
-    },
-    {
-      date: "Oct 2020 - June 2021",
-      title: "Web Development Lead",
-      company: "UAS NMIMS"
-    },
-    {
-      date: "Sept 2019 - May 2020",
-      title: "Co-Founder / Lead Full Stack Engineer",
-      company: "Unlock (SaaS Startup)"
+      date: 'August 2021',
+      title: 'B.Tech in Electronics and Telecommunications',
+      institution: 'Narsee Monjee Institute of Management Studies (NMIMS)'
     }
   ];
 
-  let edu = [
+  const skillSet = [
     {
-      date: "May 2025",
-      title: "Master of Science in Information Systems",
-      company: "California State University, Long Beach"
+      title: 'Languages & Web Core',
+      skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C/C++', 'HTML5', 'CSS3', 'JSON', 'GraphQL', 'WebSockets']
     },
     {
-      date: "August 2021",
-      title: "B.Tech in Electronics and Telecommunications",
-      company: "Narsee Monjee Institute of Management Studies"
+      title: 'Frameworks, Libraries & Cloud APIs',
+      skills: ['React.js', 'Node.js', 'Express.js', 'Spring Boot', 'FastAPI', 'Vite', 'Zod', 'Server-Sent Events (SSE)', 'REST APIs']
+    },
+    {
+      title: 'Cloud Infrastructure & DevOps',
+      skills: ['AWS (Lambda, Aurora, DynamoDB, EKS, API Gateway, Cognito, CodePipeline)', 'Docker', 'Kubernetes', 'CI/CD Pipelines', 'Linux/Unix', 'GitHub Actions']
+    },
+    {
+      title: 'AI Engineering & Tooling',
+      skills: ['Google Genkit', 'Gemini API', 'Ollama (Gemma)', 'Tree-sitter (AST)', 'AI-Agent Architectures', 'AST Hashing (SHA256)']
     }
   ];
 
-  let skillSet =[
-    {
-      title: "Languages & Web Core",
-      skills:[
-        "JavaScript", "TypeScript", "Python", "C/C++",
-        "HTML5", "CSS3", "JSON", "GraphQL", "WebSockets"
-      ]
-    },
-    {
-      title: "Frameworks, Libraries & APIs",
-      skills:[
-        "React.js", "Node.js", "Express.js", "Django",
-        "Vite", "Zod", "Server-Sent Events (SSE)", "Mapbox API", "REST APIs"
-      ]
-    },
-    {
-      title: "Cloud, DevOps & Infrastructure",
-      skills:[
-        "Docker", "Kubernetes", "CI/CD Pipelines", "GitHub Actions",
-        "AWS (EC2, S3, RDS)", "Jenkins", "Linux", "Nginx"
-      ]
-    },
-    {
-      title: "Data Engineering & AI",
-      skills:[
-        "PostgreSQL", "MongoDB", "Oracle SQL", "Google Genkit (ADK)",
-        "Gemini API", "Tree-sitter (AST)", "AI-Agent Architectures"
-      ]
-    },
-    {
-      title: "Tools, Testing & Methodologies",
-      skills:[
-        "Git", "GitHub", "Postman", "Jest",
-        "SEO & WCAG Accessibility", "Agile", "Scrum", "SDLC"
-      ]
-    }
-  ];
-
-  let hColor = "#00E5FF"
   return (
-    <AboutContainer1>   
-      <GridItem>
-        <Zoom>
-          <ProfilePic />
-        </Zoom>
-      </GridItem>
-      <Summary>
-        <Zoom>
-          <p className='summary-text'>
-            Full-Stack Software Engineer with <span style={{ color: hColor }}>4+ years of experience</span> blending the 0-to-1 agility of a startup founder 
-            with enterprise fintech compliance. My expertise in <span style={{ color: hColor }}>React, Node.js, and TypeScript</span>, combined with modern 
-            <span style={{ color: hColor }}> AI Agent Architectures</span>, enables me to deliver secure, scalable, and mathematically verified web platforms.
-          </p>
-        </Zoom>
-      </Summary>
-      <GridItem2>
-        <Zoom>
-          <h1 style={{fontWeight:"400"}}>MY SOCIALS</h1>
-          <IconWrap1>
-            {socialIcons && socialIcons.map((socialIcon, index) => (
-                <Link key={index} aria-label={socialIcon.ariaLabel} to={socialIcon.link} target="_blank" rel="noopener noreferrer">
-                  <Icons>
-                    {socialIcon.icon}
-                  </Icons>
-                </Link>
-              ))}
-          </IconWrap1>
-        </Zoom>
-      </GridItem2>
-      <BriefExp style={{gridRow: "span 2"}}>
-        <Zoom>
-          <h1 className='heading'>Skills</h1>
-          {skillSet && skillSet.map((category, index) => (
-            <SkillCategory key={index}>
-              <p className='expTitle' style={{fontSize: '1.1em', marginBottom: '0.5em'}}>{category.title}</p>
-              <SkillPillContainer>
-                {category.skills.map((skill, skillIndex) => (
-                  <SkillPill key={skillIndex}>{skill}</SkillPill>
-                ))}
-              </SkillPillContainer>
-            </SkillCategory>
-          ))}
-        </Zoom>
-      </BriefExp>
-      <BriefExp>
-        <Zoom>
-          <h1 className='heading'>Education</h1>
-          {edu && edu.map((edu, index) => (
-            <div key={index} style={{marginBottom: '1.5em'}}>
-              <p className='expText'>{edu.date}</p>
-              <p className='expTitle'>{edu.title}</p>
-              <p className='expText'>{edu.company}</p>
-            </div>
-          ))}
-        </Zoom>
-      </BriefExp>
-      <BriefExp>
-        <Zoom>
-          <h1 className='heading'>Experience</h1>
-          {exp && exp.map((exp, index) => (
-            <div key={index} style={{marginBottom: '1.5em'}}>
-              <p className='expText'>{exp.date}</p>
-              <p className='expTitle'>{exp.title}</p>
-              <p className='expText'>{exp.company}</p>
-            </div>
-          ))}
-        </Zoom>
-      </BriefExp>      
-    </AboutContainer1>
-  )
-}
+    <SectionContainer id="summary">
+      <SectionCommandHeader>
+        <span className="cmd-prefix">&gt;</span>
+        <span className="cmd-name"> executing tool:</span>
+        <span className="cmd-call"> profile_diagnostic.inspect(category="EDUCATION_AND_SKILLS")</span>
+      </SectionCommandHeader>
+
+      <AboutGrid>
+        <TuiCard>
+          <CardTopBar>
+            <span className="bar-title">ACADEMIC_CREDENTIALS</span>
+            <span className="bar-tag">VERIFIED</span>
+          </CardTopBar>
+          <CardBody>
+            {edu.map((item, idx) => (
+              <EduItem key={idx}>
+                <div className="edu-date">{item.date}</div>
+                <div className="edu-title">{item.title}</div>
+                <div className="edu-inst">{item.institution}</div>
+              </EduItem>
+            ))}
+          </CardBody>
+        </TuiCard>
+
+        <TuiCard>
+          <CardTopBar>
+            <span className="bar-title">CORE_COMPETENCIES_MATRIX</span>
+          </CardTopBar>
+          <CardBody>
+            {skillSet.map((cat, idx) => (
+              <SkillGroup key={idx}>
+                <div className="group-title">{cat.title} {'//'}</div>
+                <PillsWrap>
+                  {cat.skills.map((s, sIdx) => (
+                    <Pill key={sIdx}>{s}</Pill>
+                  ))}
+                </PillsWrap>
+              </SkillGroup>
+            ))}
+          </CardBody>
+        </TuiCard>
+      </AboutGrid>
+    </SectionContainer>
+  );
+};
 
 export default About;
 
+// Compatibility exports
+export const BriefExp = styled.div``;
+export const IconWrap1 = styled.div``;
 
-const AboutContainer1 = styled(Container)`
-  @media(max-width: 1080px){
-    grid-template-columns: auto
+// --- STYLED COMPONENTS ---
+
+const SectionContainer = styled.section`
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 3.5rem;
+  scroll-margin-top: 80px;
+`;
+
+const SectionCommandHeader = styled.div`
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0.8rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--accent-yellow);
+  border-radius: 6px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+
+  .cmd-prefix {
+    color: var(--accent-yellow);
+    font-weight: 700;
+  }
+  .cmd-name {
+    color: var(--text-secondary);
+  }
+  .cmd-call {
+    color: var(--accent-cyan);
+    font-weight: 500;
+    word-break: break-all;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 0.85rem;
+    flex-wrap: wrap;
   }
 `;
 
-const Summary = styled(GridItem)`
-  grid-column: span 2;
-  @media(max-width: 1440px){
-    grid-column: 2 / 4;
+const AboutGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 900px) {
+    grid-template-columns: minmax(0, 1fr);
   }
-  @media(max-width: 1080px){
-    grid-column: span 1;
+`;
+
+const TuiCard = styled.div`
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+`;
+
+const CardTopBar = styled.div`
+  background: var(--bg-code);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.76rem;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  .bar-title {
+    color: var(--accent-yellow);
+    font-weight: 600;
+    word-break: break-all;
   }
+  .bar-tag {
+    color: var(--accent-green);
+  }
+`;
+
+const CardBody = styled.div`
+  padding: 1.2rem;
   display: flex;
   flex-direction: column;
-  padding: 1em;
-  align-items: center;
-  justify-content: center;
+  gap: 1.2rem;
+  width: 100%;
+  box-sizing: border-box;
 
-  .summary-text {
-    font-size: 1.7em;
-    line-height: 1.6; // Added for better readability
-    @media(max-width: 512px){
-      font-size: 1.3em;
-    }
+  @media (max-width: 512px) {
+    padding: 0.85rem;
   }
 `;
 
-const BriefExp = styled(GridItem2)`
-  justify-content: start;
-  padding: 0em 1em;
-  grid-column: span 2;
-  @media(max-width: 1080px){
-    grid-column: span 1;
-  }
-  .heading {
-    text-transform: uppercase;
-    font-weight: 400;
-  }
+const EduItem = styled.div`
+  border-left: 2px solid var(--accent-yellow);
+  padding-left: 0.8rem;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 
-  .expText {
-    font-size: 1em;
-    font-weight: 400;
-    color: rgb(200, 200, 200);
+  .edu-date {
+    color: var(--accent-yellow);
+    font-size: 0.76rem;
+    margin-bottom: 2px;
   }
-
-  .expTitle {
-    font-size: 1.3em;
+  .edu-title {
+    color: #ffffff;
+    font-size: 0.95rem;
     font-weight: 600;
-    margin: 0.2em 0; // Adjusted margin for better spacing
+    margin-bottom: 2px;
+    word-break: break-word;
   }
-  @media(max-width: 1080px){
-    grid-row: span 1;
-  }
-`;
-
-const IconWrap1 = styled(IconWrap)`
-  @media(max-width: 1080px){
-    grid-template-columns: auto auto auto auto;
+  .edu-inst {
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    word-break: break-word;
   }
 `;
 
+const SkillGroup = styled.div`
+  word-break: break-word;
+  overflow-wrap: anywhere;
 
-const SkillCategory = styled.div`
-  margin-bottom: 1.5em;
+  .group-title {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+  }
 `;
 
-const SkillPillContainer = styled.div`
-  justify-content: center;
+const PillsWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75em;
+  gap: 0.35rem;
+  width: 100%;
 `;
 
-const SkillPill = styled.span`
-  background-color: rgb(60, 60, 60);
-  color: rgb(210, 210, 210);
-  padding: 0.5em 1em;
-  border-radius: 15px;
-  font-size: 0.9em;
-  font-weight: 500;
+const Pill = styled.span`
+  background: var(--bg-code);
+  border: 1px solid var(--border-color);
+  color: var(--accent-cyan);
+  font-size: 0.75rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+  word-break: break-word;
 `;
-
-export {
-  BriefExp,
-  IconWrap1
-};

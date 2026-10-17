@@ -1,10 +1,36 @@
 .App {
-  text-align: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  
-}
-body {
-  background-color: rgb(20, 20, 20);
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 70px; /* Space for sticky bottom interactive prompt */
+  overflow-x: hidden;
 }
 
+main {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
 
+section {
+  scroll-margin-top: 75px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 512px) {
+  main {
+    padding: 0 0.5rem;
+  }
+}

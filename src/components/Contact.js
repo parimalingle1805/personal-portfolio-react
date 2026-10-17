@@ -1,34 +1,18 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Fade } from 'react-awesome-reveal';
-import {
-  MailOutline,
-  Phone,
-  LocationOn,
-  LinkedIn,
-  GitHub,
-  ContentCopy,
-  CheckCircle,
-} from '@mui/icons-material';
-import XIcon from '@mui/icons-material/X';
-import RedditIcon from '@mui/icons-material/Reddit';
 
 const Contact = () => {
-  window.scrollTo(0, 0);
-
-  // State for the contact form
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
 
-  // State to manage the "Copied!" tooltip
   const [copied, setCopied] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -37,124 +21,196 @@ const Contact = () => {
   const handleCopy = (textToCopy, field) => {
     navigator.clipboard.writeText(textToCopy);
     setCopied(field);
-    setTimeout(() => setCopied(''), 2000); // Hide tooltip after 2 seconds
+    setTimeout(() => setCopied(''), 2000);
   };
 
   const contactInfo = [
     {
-      icon: <MailOutline />,
+      iconText: '✉',
+      label: 'EMAIL',
       text: 'parimal.ingle18@gmail.com',
       copyable: true,
     },
     {
-      icon: <Phone />,
+      iconText: '☎',
+      label: 'PHONE',
       text: '+1 (562) 846-0322',
       copyable: true,
     },
     {
-      icon: <LocationOn />,
-      text: 'Atlanta, GA',
+      iconText: '⚲',
+      label: 'LOCATION',
+      text: 'Pune, IN',
       copyable: false,
     },
   ];
 
   const socialLinks = [
     {
-      icon: <GitHub />,
-      label: 'GitHub',
+      name: 'GitHub',
+      label: 'gh/parimalingle1805',
       url: 'https://github.com/parimalingle1805',
-      bgColor: '#333',
+      color: '#ffffff',
+      iconText: 'gh',
     },
     {
-      icon: <LinkedIn />,
-      label: 'LinkedIn',
+      name: 'LinkedIn',
+      label: 'in/parimalingle',
       url: 'https://www.linkedin.com/in/parimalingle/',
-      bgColor: '#0077B5',
+      color: '#0077B5',
+      iconText: 'in',
     },
     {
-      icon: <RedditIcon />,
-      label: 'Reddit',
+      name: 'Reddit',
+      label: 'u/parimalingle1805',
       url: 'https://www.reddit.com/user/parimalingle1805/',
-      bgColor: '#FF4500',
+      color: '#FF4500',
+      iconText: 'r/',
     },
     {
-      icon: <XIcon />,
-      label: 'X',
+      name: 'X',
+      label: '@IngleParimal',
       url: 'https://x.com/IngleParimal',
-      bgColor: '#000000',
+      color: '#1da1f2',
+      iconText: '𝕏',
     },
   ];
 
   return (
-    <ContactPageContainer>
-      <Fade direction="up" triggerOnce duration={800}>
-        <ContactWrapper>
-          <Header>
-            <h1>Get In Touch</h1>
-            <p>Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.</p>
-          </Header>
+    <SectionContainer id="contact">
+      <SectionCommandHeader>
+        <span className="cmd-prefix">&gt;</span>
+        <span className="cmd-name"> executing tool:</span>
+        <span className="cmd-call"> dispatch_message.compose(channel="FORMSPREE_REST_ENDPOINT")</span>
+      </SectionCommandHeader>
 
-          <ContactGrid>
-            {/* Left Side: Contact Form */}
-            <Fade cascade damping={0.2} direction="left" triggerOnce>
-              <ContactForm action="https://formspree.io/f/xvgrrvla" method="POST">
-                <StyledInput
+      <ContactGrid>
+        {/* Left Side: Interactive CLI Payload Sender (Preserves Formspree POST) */}
+        <TuiFormCard>
+          <CardTopBar>
+            <span className="bar-title">POST https://formspree.io/f/xvgrrvla</span>
+            <span className="bar-tag">ENCRYPTED {'//'} TLS 1.3</span>
+          </CardTopBar>
+
+          <CardFormBody>
+            <FormHeaderDesc>
+              Send an inquiry directly to my inbox. All payloads are securely forwarded via Formspree webhook integration.
+            </FormHeaderDesc>
+
+            <StyledForm
+              action="https://formspree.io/f/xvgrrvla"
+              method="POST"
+            >
+              <FormGroup>
+                <FieldLabel>
+                  <span className="arg-prefix">--</span>name <span className="req">*</span>
+                </FieldLabel>
+                <TerminalInput
                   type="text"
                   name="name"
-                  placeholder="Your Name"
+                  placeholder="e.g. Linus Torvalds"
                   value={formData.name}
                   onChange={handleChange}
                   required
                 />
-                <StyledInput
+              </FormGroup>
+
+              <FormGroup>
+                <FieldLabel>
+                  <span className="arg-prefix">--</span>email <span className="req">*</span>
+                </FieldLabel>
+                <TerminalInput
                   type="email"
                   name="email"
-                  placeholder="Your Email"
+                  placeholder="e.g. recruiter@company.com"
                   value={formData.email}
                   onChange={handleChange}
                   required
                 />
-                <StyledTextarea
+              </FormGroup>
+
+              <FormGroup>
+                <FieldLabel>
+                  <span className="arg-prefix">--</span>message <span className="req">*</span>
+                </FieldLabel>
+                <TerminalTextarea
                   name="message"
-                  placeholder="Your Message"
-                  rows="6"
+                  placeholder="Type your message, opportunity details, or questions..."
+                  rows="5"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                ></StyledTextarea>
-                <SubmitButton type="submit">Send Message</SubmitButton>
-              </ContactForm>
-            </Fade>
+                />
+              </FormGroup>
 
-            {/* Right Side: Direct Info & Socials */}
-            <DirectContact>
-              <Fade cascade damping={0.2} direction="right" triggerOnce>
-                {contactInfo.map((info, index) => (
-                  <ContactInfoRow key={index} onClick={() => info.copyable && handleCopy(info.text, info.text)}>
-                    <IconWrapper>{info.icon}</IconWrapper>
-                    <span>{info.text}</span>
-                    {info.copyable && (
-                      <CopyIconWrapper>
-                        {copied === info.text ? <CheckCircle style={{ color: '#4caf50' }} /> : <ContentCopy />}
-                      </CopyIconWrapper>
-                    )}
-                  </ContactInfoRow>
-                ))}
+              <SubmitTerminalButton type="submit">
+                <span className="btn-bracket">[</span> EXECUTE DISPATCH {'//'} SEND MESSAGE <span className="btn-bracket">]</span>
+              </SubmitTerminalButton>
+            </StyledForm>
+          </CardFormBody>
+        </TuiFormCard>
 
-                <SocialLinksContainer>
-                  {socialLinks.map((social, index) => (
-                    <SocialLink key={index} href={social.url} target="_blank" rel="noopener noreferrer" style={{'--bg-color': social.bgColor}}>
-                      {social.icon}
-                      {social.label}
-                    </SocialLink>
-                  ))}
-                </SocialLinksContainer>
-              </Fade>
-            </DirectContact>
-          </ContactGrid>
-        </ContactWrapper>
-      </Fade>
-    </ContactPageContainer>
+        {/* Right Side: Direct Diagnostics & Contact Endpoints */}
+        <DirectInfoColumn>
+          <InfoCard>
+            <CardTopBar>
+              <span className="bar-title">DIRECT_SOCKET_INFO</span>
+              <span className="bar-tag">CLICK_TO_COPY</span>
+            </CardTopBar>
+
+            <InfoList>
+              {contactInfo.map((info, index) => (
+                <InfoItem
+                  key={index}
+                  onClick={() => info.copyable && handleCopy(info.text, info.label)}
+                  $isClickable={info.copyable}
+                >
+                  <div className="icon-wrapper">{info.iconText}</div>
+                  <div className="info-content">
+                    <span className="info-label">{info.label} {'//'}</span>
+                    <span className="info-text">{info.text}</span>
+                  </div>
+                  {info.copyable && (
+                    <CopyStatus>
+                      {copied === info.label ? (
+                        <span className="copied-tag">✓ COPIED</span>
+                      ) : (
+                        <span className="copy-hint">[COPY]</span>
+                      )}
+                    </CopyStatus>
+                  )}
+                </InfoItem>
+              ))}
+            </InfoList>
+          </InfoCard>
+
+          <SocialEndpointsCard>
+            <CardTopBar>
+              <span className="bar-title">EXTERNAL_LINKS {'//'} NETWORK_ENDPOINTS</span>
+            </CardTopBar>
+
+            <SocialList>
+              {socialLinks.map((social, index) => (
+                <SocialEndpoint
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                >
+                  <span className="endpoint-icon" style={{ color: social.color }}>
+                    {social.iconText}
+                  </span>
+                  <span className="endpoint-name">{social.name}</span>
+                  <span className="endpoint-url">{social.label}</span>
+                  <span className="endpoint-arrow">↗</span>
+                </SocialEndpoint>
+              ))}
+            </SocialList>
+          </SocialEndpointsCard>
+        </DirectInfoColumn>
+      </ContactGrid>
+    </SectionContainer>
   );
 };
 
@@ -162,168 +218,378 @@ export default Contact;
 
 // --- STYLED COMPONENTS ---
 
-const ContactPageContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2em 1em;
-  min-height: 80vh;
-`;
-
-const ContactWrapper = styled.div`
-  background-color: rgb(40, 40, 40);
-  border-radius: 20px;
-  padding: 2em 3em;
+const SectionContainer = styled.section`
   width: 100%;
-  max-width: 1100px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  color: white;
-
-  @media (max-width: 768px) {
-    padding: 2em 1.5em;
-  }
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 4rem;
+  scroll-margin-top: 80px;
 `;
 
-const Header = styled.div`
-  text-align: center;
-  margin-bottom: 2.5em;
-  h1 {
-    font-size: 2.5em;
-    font-weight: 600;
-    margin-bottom: 0.25em;
+const SectionCommandHeader = styled.div`
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0.8rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--accent-green);
+  border-radius: 6px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+
+  .cmd-prefix {
+    color: var(--accent-green);
+    font-weight: 700;
   }
-  p {
-    font-size: 1.1em;
-    color: rgb(200, 200, 200);
-    max-width: 600px;
-    margin: 0 auto;
+  .cmd-name {
+    color: var(--text-secondary);
+  }
+  .cmd-call {
+    color: var(--accent-terracotta);
+    font-weight: 500;
+    word-break: break-all;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 0.85rem;
+    flex-wrap: wrap;
   }
 `;
 
 const ContactGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3em;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 
-  @media (max-width: 960px) {
-    grid-template-columns: 1fr;
-    gap: 4em;
+  @media (max-width: 900px) {
+    grid-template-columns: minmax(0, 1fr);
   }
 `;
 
-const ContactForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
+const TuiFormCard = styled.div`
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 `;
 
-const inputStyles = `
-  background-color: rgb(55, 55, 55);
-  border: 1px solid rgb(80, 80, 80);
-  border-radius: 10px;
-  padding: 1em;
-  color: white;
-  font-size: 1em;
-  font-family: inherit;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+const CardTopBar = styled.div`
+  background: var(--bg-code);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.76rem;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  .bar-title {
+    color: var(--accent-terracotta);
+    font-weight: 600;
+    word-break: break-all;
+  }
+  .bar-tag {
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+`;
+
+const CardFormBody = styled.div`
+  padding: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 512px) {
+    padding: 0.85rem;
+  }
+`;
+
+const FormHeaderDesc = styled.p`
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  word-break: break-word;
+`;
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+`;
+
+const FormGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+  box-sizing: border-box;
+`;
+
+const FieldLabel = styled.label`
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  .arg-prefix {
+    color: var(--accent-terracotta);
+  }
+  .req {
+    color: var(--accent-red);
+  }
+`;
+
+const inputShared = `
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--bg-code);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.65rem 0.85rem;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &::placeholder {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+  }
 
   &:focus {
     outline: none;
-    border-color: #90caf9;
-    box-shadow: 0 0 0 3px rgba(144, 202, 249, 0.3);
+    border-color: var(--accent-terracotta);
+    box-shadow: 0 0 0 2px var(--accent-terracotta-glow);
   }
 `;
 
-const StyledInput = styled.input`${inputStyles}`;
-const StyledTextarea = styled.textarea`${inputStyles}
+const TerminalInput = styled.input`
+  ${inputShared}
+`;
+
+const TerminalTextarea = styled.textarea`
+  ${inputShared}
   resize: vertical;
 `;
 
-const SubmitButton = styled.button`
-  background-color: #90caf9;
-  color: rgb(20, 20, 20);
-  border: none;
-  border-radius: 10px;
-  padding: 1em;
-  font-size: 1.1em;
+const SubmitTerminalButton = styled.button`
+  margin-top: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(217, 119, 87, 0.15);
+  color: #ffffff;
+  border: 1px solid var(--accent-terracotta);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-
-  &:hover {
-    background-color: #a9d6fa;
-    transform: translateY(-3px);
-  }
-`;
-
-const DirectContact = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
-`;
-
-const ContactInfoRow = styled.div`
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 1em;
-  background-color: rgb(55, 55, 55);
-  padding: 1em;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
+  justify-content: center;
+  text-align: center;
+  word-break: break-word;
 
-  span {
-    font-size: 1.1em;
+  .btn-bracket {
+    color: var(--accent-terracotta);
+    margin: 0 0.35rem;
   }
-  
-  ${props => props.onClick && `
-    cursor: pointer;
+
+  &:hover {
+    background: rgba(217, 119, 87, 0.3);
+    box-shadow: 0 0 16px rgba(217, 119, 87, 0.35);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 512px) {
+    font-size: 0.78rem;
+    padding: 0.65rem 0.5rem;
+  }
+`;
+
+const DirectInfoColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+`;
+
+const InfoCard = styled.div`
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+`;
+
+const InfoList = styled.div`
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+  box-sizing: border-box;
+`;
+
+const InfoItem = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--bg-code);
+  border: 1px solid var(--border-color);
+  padding: 0.7rem 0.85rem;
+  border-radius: 6px;
+  cursor: ${(props) => (props.$isClickable ? 'pointer' : 'default')};
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+
+  .icon-wrapper {
+    font-size: 1.1rem;
+    color: var(--accent-cyan);
+    min-width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .info-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+
+    .info-label {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
+    .info-text {
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+
+  ${(props) =>
+    props.$isClickable &&
+    `
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      border-color: var(--accent-cyan);
+      background: rgba(86, 182, 194, 0.05);
+      transform: translateX(3px);
     }
   `}
 `;
 
-const IconWrapper = styled.div`
+const CopyStatus = styled.div`
+  flex-shrink: 0;
+  .copied-tag {
+    color: var(--accent-green);
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+  .copy-hint {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+  }
+`;
+
+const SocialEndpointsCard = styled(InfoCard)``;
+
+const SocialList = styled.div`
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+`;
+
+const SocialEndpoint = styled.a`
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #90caf9;
-`;
-
-const CopyIconWrapper = styled.div`
-  margin-left: auto;
-  color: rgb(150, 150, 150);
-`;
-
-const SocialLinksContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
-  margin-top: 1em;
-`;
-
-const SocialLink = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75em;
-  padding: 0.8em;
-  border-radius: 10px;
-  background-color: var(--bg-color);
-  color: white;
+  gap: 0.65rem;
+  background: var(--bg-code);
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 0.85rem;
+  border-radius: 6px;
   text-decoration: none;
-  font-size: 1.1em;
-  font-weight: 500;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
 
-  &:hover {
-    transform: translateY(-5px);
-    filter: brightness(1.2);
+  .endpoint-icon {
+    font-weight: 700;
+    font-size: 0.9rem;
+    min-width: 20px;
+    text-align: center;
+    flex-shrink: 0;
   }
 
-  svg {
-    font-size: 1.5em;
+  .endpoint-name {
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  .endpoint-url {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    margin-left: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 120px;
+  }
+
+  .endpoint-arrow {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    border-color: var(--accent-terracotta);
+    background: rgba(217, 119, 87, 0.06);
+
+    .endpoint-arrow {
+      color: var(--accent-terracotta);
+      transform: translate(2px, -2px);
+    }
   }
 `;
